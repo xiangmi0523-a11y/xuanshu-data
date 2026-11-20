@@ -485,6 +485,21 @@ def check_regen(manifest):
             (ok if got == e["sha256"] else fail)(sec, f"{e['path']} 重跑哈希 {'一致' if got == e['sha256'] else '不符：' + got[:12]}")
 
 
+def check_static(manifest):
+    """静态表：用生成脚本重新生成到临时目录，逐个比对哈希（需 pdftotext）"""
+    import tempfile, shutil
+    if not shutil.which("pdftotext"):
+        pending("静态表", "缺 pdftotext，未重新生成"); return
+    with tempfile.TemporaryDirectory() as d:
+        r = subprocess.run([sys.executable, p("static/gen_static_tables.py"), d], capture_output=True, text=True)
+        if r.returncode != 0:
+            fail("静态表", "生成脚本断言失败：" + (r.stderr or r.stdout).strip()[-300:]); return
+        for e in manifest["file"]:
+            path = e["path"]
+            if path.startswith("static/") and path.endswith(".csv"):
+                got = sha256(os.path.join(d, os.path.basename(path)))
+                (ok if got == e["sha256"] else fail)("静态表", f"{path} 重新生成哈希{'一致' if got == e['sha256'] else '不一致'}")
+
 def main():
     with open(p("manifest.toml"), "rb") as f:
         manifest = tomllib.load(f)
@@ -513,6 +528,7 @@ def main():
     check_visual_readme(consts)
     check_hko(jrows)
     check_eot(consts)
+    check_static(manifest)
 
     if "--regen" in sys.argv:
         check_regen(manifest)
