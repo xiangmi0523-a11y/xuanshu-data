@@ -358,3 +358,45 @@ path = "crosscheck/muse/M-3_查证任务书.md"
 status = "formal"
 sha256 = "a41d35fec99f8e0b744192a554e6c277bcef5e3c6ca6a3b58d845edcd8e9b573"
 note = "M-3 查证任务（U-1～U-4），用户 2026-11-21 决定下发"
+
+[[file]]
+path = "crosscheck/gemini/G-2_Gemini结果_原文.txt"
+status = "source"
+sha256 = "bd66ad4e002d86be22b8449c423744a65c5e44edd3a14a974d89cf273e1709dc"
+note = "Gemini G-2 交回原文（2026-11-21）"
+
+[[file]]
+path = "crosscheck/gemini/G-2_cmp.py"
+status = "formal"
+sha256 = "e38dbf199749aad84c602ac0fb112e86537c577dc39afb39b5c56c3c93c72d33"
+note = "G-2 比对与分歧归因脚本（只读）"
+
+[[file]]
+path = "crosscheck/gemini/G-2_比对报告.md"
+status = "formal"
+sha256 = "b44573b17147002257cf47cdc228786bc1002ae0f36b070e49f39f0dd45ddf5c"
+note = "G-2 比对报告：规则层一致，分歧均为 Gemini 认卦错误；藏干丑支次序为版本差异"
+
+[[file]]
+path = "crosscheck/muse/M-3_Muse已填表.pdf"
+status = "source"
+sha256 = "ee994cc25f96f90ae8efba794b17e8d0eeb16707238201bed748c0bbac4f201e"
+note = "Muse M-3 已填表交回原件"
+
+[[file]]
+path = "crosscheck/muse/M-3_Muse交回报告.pdf"
+status = "source"
+sha256 = "b450d6f0161a29cb796827fbd7fae835fcaf2421dcad48dc24bc7b9372348694"
+note = "Muse M-3 交回报告原件"
+
+[[file]]
+path = "crosscheck/muse/M-3_Claude核对记录.md"
+status = "formal"
+sha256 = "92924a49634abe7d99a39ddea112bd56ab038ec8cc5221c108d3a68ede90d632"
+note = "M-3 Claude 核对记录"
+
+[[file]]
+path = "review/M-3_G-2_待裁决清单.md"
+status = "formal"
+sha256 = "ff280fee6bdafa0e35746602b49d2f4bcb4ca8540279389114b9a6727855f4d6"
+note = "M-3 与 G-2 之后的待裁决清单 U-1～U-5"
