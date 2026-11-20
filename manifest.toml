@@ -64,8 +64,9 @@ sha256 = "81fc940262055ebc16c317d24e86d23abeb76f1716ad472fc258d878d215720b"
 
 [[file]]
 path = "jieqi/hko_dates_sample_12y.txt"
-status = "pending"
-note = "香港天文台 12 年 288 个节气日期抽样【B4-3】；待从项目文件 xuanshu/jieqi/ 放入"
+status = "source"
+sha256 = "fb6bcdbed59623ad6101278400649418400ff120ba1815eb7a41bb1d37f6f00c"
+note = "香港天文台 12 年 288 个节气日期抽样【B4-3】；CI 与基准表逐日比对（DATE_LEVEL_DUAL）"
 
 [[file]]
 path = "jieqi/superseded/jieqi_1900_2100_utc_nonskyfield.csv"
@@ -86,9 +87,9 @@ rows = 4824
 
 [[file]]
 path = "jieqi/superseded/gen_jieqi_table.py"
-status = "pending"
+status = "superseded"
 sha256 = "7ecdb0ac4521cbd415efbc6e62fbb5e5fdde2331dc91e0c9fb748c24ee0d6f92"
-note = "UT1 版临时表的生成脚本，已被取代；待从项目文件 xuanshu/jieqi/ 放入（可选）"
+note = "UT1 版临时表的生成脚本，已被取代"
 
 # ---------------------------------------------------------------- 日柱
 [[file]]
@@ -140,9 +141,9 @@ note = "紫金山日历节气机器抄取结果【B4-17】；1912 小雪一行�
 
 [[file]]
 path = "almanac/scripts/parse_zjs.py"
-status = "pending"
+status = "formal"
 sha256 = "203ed647a1a086b2a32464de2a4bf69d8bae0a07b3c7a5e48aca2f788598b7cf"
-note = "抄取脚本（读 pdftotext 24.02.0 -layout 输出）；待从项目文件 xuanshu/almanac/scripts/ 放入"
+note = "抄取脚本（读 pdftotext 24.02.0 -layout 输出）；CI 从 PDF 重跑，结果须与抄取 CSV 一致（手工更正行除外）"
 
 [[file]]
 path = "almanac/scripts/cmp_zjs.py"
@@ -165,7 +166,7 @@ sha256 = "e3ddc53bc0c7b30dd6ab00e7366605b83e64579d02f57335056a136316cf34ee"
 path = "almanac/visual_check_24/visual_check_01-12.png"
 status = "pending"
 sha256 = "0c2864e0f132378984adbde40fcc3c9df00a54975daee627291c03a8b33d6021"
-note = "24 条对图证据【B4-17】"
+note = "24 条对图证据原件【B4-17】；经聊天上传的是重新编码的副本，见 chat_copy/；原件须以压缩包或 GitHub 网页上传才能保住字节"
 
 [[file]]
 path = "almanac/visual_check_24/visual_check_13-24.png"
@@ -174,5 +175,18 @@ sha256 = "d55af971dd28ade1cefffa0c4bd084c48eca4fa445f7af2007b62f5d6e929f0d"
 
 [[file]]
 path = "almanac/visual_check_24/README.txt"
-status = "pending"
-note = "逐条页码与数值；哈希待放入时登记"
+status = "source"
+sha256 = "e8c36ead3e8121553657d1740a931b882291433a2d553da605d6964219910bb1"
+note = "逐条页码与数值；CI 核对其 24 条与 constants.toml 清单一致"
+
+[[file]]
+path = "almanac/visual_check_24/chat_copy/visual_check_01-12.png"
+status = "source"
+sha256 = "48bb3141e261c602e5fc1dba8409f37f411fb3b8a08eb141560ed0ed7f46438d"
+note = "原件 0c2864e0 经聊天上传后的重新编码副本；内容为 #1–#12 对图，字节与原件不同"
+
+[[file]]
+path = "almanac/visual_check_24/chat_copy/visual_check_13-24.png"
+status = "source"
+sha256 = "902a994a7e317c7c2c7c9262d6ca1cc6038876e7a29a5008f05594ac124c3b33"
+note = "原件 d55af971 经聊天上传后的重新编码副本；内容为 #13–#24 对图"

@@ -337,6 +337,75 @@ def check_almanac_days(dp):
     else:
         ok(sec, f"1900–2025 共 {expect} 天逐日比对，年历与日柱序列全部一致")
 
+
+def check_almanac_reparse():
+    sec = "年历抄取复现"
+    pdf = p("almanac/紫金山天文台_1900-2025年日历.pdf")
+    script = p("almanac/scripts/parse_zjs.py")
+    ext = p("almanac/zjs_terms_1900_2025_extracted.csv")
+    import shutil
+    if not (os.path.exists(pdf) and os.path.exists(script) and os.path.exists(ext)):
+        pending(sec, "PDF、抄取脚本或抄取结果未齐")
+        return
+    if not shutil.which("pdftotext"):
+        pending(sec, "本机没有 pdftotext，跳过（CI 会装）")
+        return
+    with tempfile.TemporaryDirectory() as td:
+        txt, out = os.path.join(td, "zjs.txt"), os.path.join(td, "re.csv")
+        subprocess.run(["pdftotext", "-layout", pdf, txt], check=True)
+        subprocess.run([sys.executable, "-I", script, txt, out], check=True, capture_output=True)
+        with open(out, encoding="utf-8", newline="") as f:
+            again = {(r["year"], r["term"]): r for r in csv.DictReader(f)}
+    with open(ext, encoding="utf-8", newline="") as f:
+        stored = list(csv.DictReader(f))
+    cols = ["month", "day", "hour", "minute", "footnote", "txt_line"]
+    differ = {(r["year"], r["term"]) for r in stored
+              if (r["year"], r["term"]) not in again or any(again[(r["year"], r["term"])][c] != r[c] for c in cols)}
+    fixed = {(r["year"], r["term"]) for r in stored if r.get("note") == "parse_fixed_by_page_text"}
+    if differ == fixed and len(again) == len(stored):
+        ok(sec, f"从 PDF 重跑抄取脚本得 {len(again)} 条，与抄取结果一致；唯一不同的是已登记的手工更正行 {sorted(' '.join(k) for k in fixed)}")
+    else:
+        fail(sec, f"重跑结果与抄取 CSV 不符：未登记的差异 {sorted(differ - fixed)[:5]}，登记了却没差异 {sorted(fixed - differ)}")
+
+
+def check_visual_readme(c):
+    sec = "对图证据"
+    rel = "almanac/visual_check_24/README.txt"
+    if not os.path.exists(p(rel)):
+        pending(sec, "对图 README 尚未放入")
+        return
+    import re
+    txt = open(p(rel), encoding="utf-8").read()
+    listed = {f"{y} {t}" for y, t in re.findall(r"#\d+\s*(\d{4})\s*(\S{2})\s*p\d+", txt)}
+    want = set(c["almanac"]["visual_checked"])
+    (ok if listed == want else fail)(sec, f"README 列出 {len(listed)} 条，与 constants.toml 清单{'一致' if listed == want else '不一致：' + str(sorted(listed ^ want))}")
+
+
+def check_hko(jieqi_rows):
+    sec = "香港天文台日期比对"
+    rel = "jieqi/hko_dates_sample_12y.txt"
+    if not os.path.exists(p(rel)):
+        pending(sec, "抽样文件尚未放入")
+        return
+    trad = {"驚蟄": "惊蛰", "小滿": "小满", "穀雨": "谷雨", "處暑": "处暑", "芒種": "芒种"}
+    base = {(int(r[0]), r[1]): datetime.fromisoformat(r[3]).strftime("%m-%d") for r in jieqi_rows}
+    n, bad = 0, []
+    for line in open(p(rel), encoding="utf-8"):
+        if ":" not in line:
+            continue
+        y, rest = line.split(":", 1)
+        for item in rest.split(","):
+            name, md = item.split()
+            name = trad.get(name, name)
+            n += 1
+            if base.get((int(y), name)) != md:
+                bad.append(f"{y} {name} 天文台 {md} 基准 {base.get((int(y), name))}")
+    if bad:
+        for b in bad[:10]:
+            fail(sec, b)
+    else:
+        ok(sec, f"{n} 个节气日期与基准表全部同日（日期级第二来源，DATE_LEVEL_DUAL）")
+
 # ------------------------------------------------------------------ 6. 重跑
 def check_regen(manifest):
     sec = "重跑复现"
@@ -378,6 +447,9 @@ def main():
 
     check_almanac_terms(consts, jrows)
     check_almanac_days(dp_formal or dp_recheck)
+    check_almanac_reparse()
+    check_visual_readme(consts)
+    check_hko(jrows)
 
     if "--regen" in sys.argv:
         check_regen(manifest)

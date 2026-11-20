@@ -36,9 +36,6 @@
 
 ## 当前待补（CI 里显示为 ⏳，不算失败）
 
-- `almanac/scripts/parse_zjs.py`（契约登记 sha256 `203ed647…`）：紫金山日历抄取脚本
-- `almanac/visual_check_24/`：24 条对图证据两张 PNG（`0c2864e0…`、`d55af971…`）与 README.txt
-- `jieqi/hko_dates_sample_12y.txt`：香港天文台 12 年抽样日期
-- `jieqi/superseded/gen_jieqi_table.py`（`7ecdb0ac…`）：UT1 版临时表脚本，已被取代，可选
+- `almanac/visual_check_24/` 的两张对图 PNG 原件（`0c2864e0…`、`d55af971…`）。经聊天上传的图片会被重新编码、字节改变，现存的是 `chat_copy/` 副本；原件请打成 zip 发，或在 GitHub 网页直接上传。
 
 B4 仍未解除。
