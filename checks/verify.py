@@ -102,7 +102,7 @@ def check_manifest(manifest):
             continue
         ok(sec, f"{rel} 哈希一致")
     # 反向：仓库里的数据文件都得登记
-    for top in ("ephemeris", "jieqi", "b4-data", "almanac", "contract", "research"):
+    for top in ("ephemeris", "jieqi", "b4-data", "almanac", "contract", "research", "eot"):
         for dirpath, _, files in os.walk(p(top)):
             for fn in files:
                 rel = os.path.relpath(os.path.join(dirpath, fn), ROOT).replace(os.sep, "/")
@@ -413,6 +413,55 @@ def check_hko(jieqi_rows):
     else:
         ok(sec, f"{n} 个节气日期与基准表全部同日（日期级第二来源，DATE_LEVEL_DUAL）")
 
+
+# ------------------------------------------------------------------ 均时差【B1-1 / W-05 数据侧】
+def check_eot(c):
+    sec = "均时差表"
+    rel = "eot/eot_1900_2100_daily.csv"
+    if not os.path.exists(p(rel)):
+        pending(sec, "均时差表尚未放入")
+        return
+    cfg = c["eot"]
+    with open(p(rel), encoding="utf-8", newline="") as f:
+        rows = list(csv.DictReader(f))
+    ds = [date.fromisoformat(r["date"]) for r in rows]
+    v = [float(r["eot_seconds"]) for r in rows]
+    errs = []
+    if len(rows) != cfg["rows"] or ds[0].isoformat() != cfg["first_date"] or ds[-1].isoformat() != cfg["last_date"]:
+        errs.append("行数或首尾日期不符")
+    if any((ds[i + 1] - ds[i]).days != 1 for i in range(len(ds) - 1)):
+        errs.append("日期不连续")
+    lo, hi = cfg["feb_min_minutes"]
+    mlo, mhi = cfg["nov_max_minutes"]
+    worst_zero = 0
+    for y in range(1900, 2101):
+        idx = [i for i, d in enumerate(ds) if d.year == y]
+        early = [i for i in idx if ds[i].month <= 3]
+        late = [i for i in idx if ds[i].month >= 9]
+        mn = min(early, key=lambda i: v[i])
+        mx = max(late, key=lambda i: v[i])
+        if not (lo <= v[mn] / 60 <= hi and ds[mn].month == 2):
+            errs.append(f"{y} 年极小值 {v[mn]/60:.2f} 分（{ds[mn]}）不在 2 月或超出 {lo}～{hi}")
+        if not (mlo <= v[mx] / 60 <= mhi and ds[mx].month in (10, 11)):
+            errs.append(f"{y} 年极大值 {v[mx]/60:.2f} 分（{ds[mx]}）超出 {mlo}～{mhi}")
+        zc = [ds[i] for i in idx if i + 1 < len(v) and v[i] * v[i + 1] <= 0]
+        for a in cfg["zero_anchors"]:
+            m_, d_ = map(int, a.split("-"))
+            tgt = date(y, m_, d_)
+            off = min(abs((z - tgt).days) for z in zc)
+            worst_zero = max(worst_zero, off)
+            if off > cfg["zero_tolerance_days"]:
+                errs.append(f"{y} 年 {a} 附近过零偏差 {off} 日")
+    bound = max(abs(v[i + 1] - 2 * v[i] + v[i - 1]) for i in range(1, len(v) - 1)) / 8
+    if bound > cfg["max_interp_error_seconds"]:
+        errs.append(f"逐日线性插值误差上界 {bound:.3f} 秒，超过 {cfg['max_interp_error_seconds']} 秒")
+    if errs:
+        for e in errs[:10]:
+            fail(sec, e)
+    else:
+        ok(sec, f"{len(rows)} 行；1900–2100 每年 2 月极小、11 月前后极大、四个过零日（最大偏差 {worst_zero} 日）均在 W-05 范围内；"
+                f"符号为视太阳时 − 平太阳时；逐日线性插值误差上界 {bound:.3f} 秒")
+
 # ------------------------------------------------------------------ 6. 重跑
 def check_regen(manifest):
     sec = "重跑复现"
@@ -463,6 +512,7 @@ def main():
     check_almanac_reparse()
     check_visual_readme(consts)
     check_hko(jrows)
+    check_eot(consts)
 
     if "--regen" in sys.argv:
         check_regen(manifest)
