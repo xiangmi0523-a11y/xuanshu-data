@@ -186,3 +186,10 @@ path = "almanac/visual_check_24/visual_check_24.zip"
 status = "source"
 sha256 = "a4b57d0f068a880b757bc73f2b3a4025890e3571ca8396c83bf8b7b50e60bfbe"
 note = "用户 2026-11-20 网页上传；内含 README.txt（e8c36ead）与两张 PNG（48bb3141、902a994a），与 chat_copy/ 相同，不是原件 0c2864e0 / d55af971"
+
+# ---------------------------------------------------------------- 研究资料
+[[file]]
+path = "research/B4-24_使用条款核实报告_Muse_2026-11-20.pdf"
+status = "source"
+sha256 = "3b14f6acf0fc2ebfd90249d89d719bcb0c7c0b8bb3c7e33f0b9feff4b0f7fc05"
+note = "Muse 对 B4-24 三项（JPL 星历、紫金山日历、Skyfield 闰秒表与 ΔT）的使用条款核实报告；结论待用户确认后写入契约"

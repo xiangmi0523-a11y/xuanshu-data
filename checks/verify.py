@@ -102,7 +102,7 @@ def check_manifest(manifest):
             continue
         ok(sec, f"{rel} 哈希一致")
     # 反向：仓库里的数据文件都得登记
-    for top in ("ephemeris", "jieqi", "b4-data", "almanac", "contract"):
+    for top in ("ephemeris", "jieqi", "b4-data", "almanac", "contract", "research"):
         for dirpath, _, files in os.walk(p(top)):
             for fn in files:
                 rel = os.path.relpath(os.path.join(dirpath, fn), ROOT).replace(os.sep, "/")
@@ -416,6 +416,12 @@ def check_hko(jieqi_rows):
 # ------------------------------------------------------------------ 6. 重跑
 def check_regen(manifest):
     sec = "重跑复现"
+    try:
+        import skyfield
+        want = "1.55"
+        (ok if skyfield.__version__ == want else fail)(sec, f"Skyfield 版本 {skyfield.__version__}，基准表按 {want} 生成【B4-24 来源清单】")
+    except ImportError:
+        pending(sec, "未安装 Skyfield，节气表无法重跑")
     for e in manifest["file"]:
         cmd = e.get("regen_cmd")
         if not cmd or not os.path.exists(p(e["path"])):
