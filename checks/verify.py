@@ -66,6 +66,7 @@ def read_csv(rel):
 def check_manifest(manifest):
     sec = "清单"
     listed = set()
+    contract = open(p("contract/玄枢数据契约_v1.0.md"), encoding="utf-8").read()
     for e in manifest["file"]:
         rel = e["path"]
         listed.add(rel)
@@ -93,6 +94,12 @@ def check_manifest(manifest):
             if n != e["rows"]:
                 fail(sec, f"{rel} 行数 {n}，清单 {e['rows']}")
                 continue
+        if e["status"] == "frozen":
+            if e["sha256"] not in contract:
+                fail("冻结", f"{rel} 已冻结，但契约正文没有载明定稿哈希 {e['sha256'][:12]}…")
+            else:
+                ok("冻结", f"{rel} 定稿哈希 {e['sha256'][:12]}… 与契约正文一致，文件未改动")
+            continue
         ok(sec, f"{rel} 哈希一致")
     # 反向：仓库里的数据文件都得登记
     for top in ("ephemeris", "jieqi", "b4-data", "almanac", "contract"):

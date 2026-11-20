@@ -5,6 +5,7 @@
 #       改文件 = 同一次提交里改这里的 sha256，并写明依据（裁决号）。
 #
 # status:
+#   frozen      已定稿冻结的基准数据：哈希永不改变，契约正文必须载明同一哈希
 #   formal      正式文件，必须在仓库里，哈希必须一致
 #   recheck     独立复算件，用于交叉核对，不作为正式依据
 #   source      原始资料（星历、年历、抄取结果等）
@@ -18,14 +19,14 @@
 [[file]]
 path = "contract/玄枢数据契约_v1.0.md"
 status = "formal"
-sha256 = "bcac053981001f7e2fa7ed29a2604882c6a10102b78b1f2e4506d239dc4766dd"
-note = "契约正文 v1.0（含 B4-1～B4-21）；PDF 由此导出，不入库"
+sha256 = "447296db1d56b7097360c503d43867a2346dfab7d0f975acf0ec30dcb68163ff"
+note = "契约正文 v1.0（含 B4-1～B4-24）；PDF 由此导出，不入库"
 
 [[file]]
 path = "contract/玄枢_v0.1.2_修订配套清单.md"
 status = "formal"
-sha256 = "3b83be2d50873ab82a53a4c9b22be5980054a1313c69964b80e36d1bdd11bfb9"
-note = "配套清单，至 §8.19"
+sha256 = "93e2c3d8c253da9fcec9957e2db523a1d399f395287a20cce063b9ac681839aa"
+note = "配套清单，至 §8.20"
 
 [[file]]
 path = "contract/README.md"
@@ -50,12 +51,12 @@ note = "JPL DE440s【B4-1】，覆盖 1849-12-26 ~ 2150-01-22"
 # ---------------------------------------------------------------- 节气
 [[file]]
 path = "jieqi/jieqi_1900_2100_utc_skyfield.csv"
-status = "formal"
+status = "frozen"
 sha256 = "69a3215524381f96b212bc682416a3da47d9de4f286fa4ef14ce9ed03ee616e4"
 rows = 4824
 generator = "jieqi/gen_jieqi_skyfield.py"
 regen_cmd = "python3 jieqi/gen_jieqi_skyfield.py ephemeris/de440s.bsp {out}"
-note = "B4 节气基准；Skyfield 1.55；钟表时间口径【B4-12】；未冻结"
+note = "B4 节气基准；Skyfield 1.55；钟表时间口径【B4-12】；2026-11-20 定稿冻结【B4-22】"
 
 [[file]]
 path = "jieqi/gen_jieqi_skyfield.py"
@@ -94,12 +95,12 @@ note = "UT1 版临时表的生成脚本，已被取代"
 # ---------------------------------------------------------------- 日柱
 [[file]]
 path = "b4-data/day_pillars_1900_2100.csv"
-status = "formal"
+status = "frozen"
 sha256 = "374922ef04e105f61fc7fd5e16966b6ae4584d39bf1f1abe39d0b38dc0fc3d89"
 rows = 73414
 generator = "b4-data/gen_day_pillars.py"
 regen_cmd = "python3 b4-data/gen_day_pillars.py {out}"
-note = "B4 日柱正式登记【B4-18】；登记不等于冻结"
+note = "B4 日柱正式登记【B4-18】；2026-11-20 定稿冻结【B4-22】"
 
 [[file]]
 path = "b4-data/gen_day_pillars.py"
@@ -125,7 +126,7 @@ sha256 = "9175f1d5f1c25f78592bdb963c8cf4f04c1f3a33ec794ddcccbb7ea900e73edb"
 path = "almanac/紫金山天文台_1900-2025年日历.pdf"
 status = "source"
 sha256 = "dc7ed4cb5dae55c1de5a0bdc97f09256a7d6b6d7fe3c553a542e9f9f7758aba4"
-note = "380 页；出处 pmo.cas.cn 科普动态 2022-03 文章附件【B4-20】；使用条款【待核】，只在本私有仓库比对，不公开再分发"
+note = "380 页；出处 https://pmo.cas.cn/xwdt2019/kpdt2019/202203/P020250414456381274062.pdf【B4-20】，内容与官网一致、字节未比对；使用条款发布前必须核实【B4-24】，只在本私有仓库比对"
 
 [[file]]
 path = "almanac/2007年中国天文年历_前30页预览.pdf"
