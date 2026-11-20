@@ -18,14 +18,14 @@
 [[file]]
 path = "contract/玄枢数据契约_v1.0.md"
 status = "formal"
-sha256 = "c289b3a08a7a221a6d9bcffb13ee1b900fa55ffb8dd387cf7309345998d1ed16"
-note = "契约正文 v1.0（含 B4-1～B4-18）；PDF 由此导出，不入库"
+sha256 = "6e4f764f6b3c425217b27db85f2b45011b1877577d2d7236fe9bcb771eb36559"
+note = "契约正文 v1.0（含 B4-1～B4-19）；PDF 由此导出，不入库"
 
 [[file]]
 path = "contract/玄枢_v0.1.2_修订配套清单.md"
 status = "formal"
-sha256 = "fcd7246433b196e080413ef616564841bbf7d49cd9303fc82a3af5db32349160"
-note = "配套清单，至 §8.17"
+sha256 = "00791cd2063e4d42ed5d553b132269edc169ce68219924f1b663332b3b5dac4d"
+note = "配套清单，至 §8.18"
 
 [[file]]
 path = "contract/README.md"
@@ -163,17 +163,6 @@ status = "source"
 sha256 = "e3ddc53bc0c7b30dd6ab00e7366605b83e64579d02f57335056a136316cf34ee"
 
 [[file]]
-path = "almanac/visual_check_24/visual_check_01-12.png"
-status = "pending"
-sha256 = "0c2864e0f132378984adbde40fcc3c9df00a54975daee627291c03a8b33d6021"
-note = "24 条对图证据原件【B4-17】；经聊天上传的是重新编码的副本，见 chat_copy/；原件须以压缩包或 GitHub 网页上传才能保住字节"
-
-[[file]]
-path = "almanac/visual_check_24/visual_check_13-24.png"
-status = "pending"
-sha256 = "d55af971dd28ade1cefffa0c4bd084c48eca4fa445f7af2007b62f5d6e929f0d"
-
-[[file]]
 path = "almanac/visual_check_24/README.txt"
 status = "source"
 sha256 = "e8c36ead3e8121553657d1740a931b882291433a2d553da605d6964219910bb1"
@@ -183,13 +172,13 @@ note = "逐条页码与数值；CI 核对其 24 条与 constants.toml 清单一�
 path = "almanac/visual_check_24/chat_copy/visual_check_01-12.png"
 status = "source"
 sha256 = "48bb3141e261c602e5fc1dba8409f37f411fb3b8a08eb141560ed0ed7f46438d"
-note = "原件 0c2864e0 经聊天上传后的重新编码副本；内容为 #1–#12 对图，字节与原件不同"
+note = "对图证据 #1–#12【B4-19】；原件 0c2864e0 只存于原会话，此为内容相同的副本"
 
 [[file]]
 path = "almanac/visual_check_24/chat_copy/visual_check_13-24.png"
 status = "source"
 sha256 = "902a994a7e317c7c2c7c9262d6ca1cc6038876e7a29a5008f05594ac124c3b33"
-note = "原件 d55af971 经聊天上传后的重新编码副本；内容为 #13–#24 对图"
+note = "对图证据 #13–#24【B4-19】；原件 d55af971 只存于原会话，此为内容相同的副本"
 
 [[file]]
 path = "almanac/visual_check_24/visual_check_24.zip"
