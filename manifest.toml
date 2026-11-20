@@ -334,3 +334,27 @@ path = "crosscheck/oracle/static_oracle.json"
 status = "formal"
 sha256 = "0e4e02c906a98617a901dd7b4bea1fb5f78d3916e3b262b0a3b1d62c2cb8c376"
 note = "独立正确性基准：十张静态表全部格子 + 4096 爻值动变 + 五行为我的六亲 + 藏干歌诀集合；引擎 vectors/static_oracle.json 为其副本"
+
+[[file]]
+path = "crosscheck/gemini/G-2_gen.py"
+status = "formal"
+sha256 = "5169b4fc9675331a491fe0a89b770f36e05efb3937890bcdaec0a52768ef59d9"
+note = "G-2 盲核对任务生成脚本（E2-A 第 1 项审查）；固定随机种子 20261121"
+
+[[file]]
+path = "crosscheck/gemini/G-2_任务书与空白表.md"
+status = "formal"
+sha256 = "6a063d4daf020dccd2080a548b9355d54bb263a0adc2443c4c55074c89d57f07"
+note = "G-2 交 Gemini 的任务书（不含答案）"
+
+[[file]]
+path = "crosscheck/gemini/G-2_答案_封存.json"
+status = "formal"
+sha256 = "b45ad8a9af59cc5c3cdeeb13ad91ff574859ae2433b68a3a1f5d520e4bf443f7"
+note = "G-2 答案封存（不外发）；sha256 记入引擎 reports/E2A1_系统审查，结果回来后据此比对"
+
+[[file]]
+path = "crosscheck/muse/M-3_查证任务书_草稿.md"
+status = "formal"
+sha256 = "ce54556180d238b3b3dbac6907162fb812eb9ba19179232e90369ee445c28389"
+note = "M-3 查证任务草稿（U-1～U-4），待用户决定是否下发"
