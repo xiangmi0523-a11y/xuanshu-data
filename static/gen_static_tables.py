@@ -64,9 +64,15 @@ for p in TRI:
     assert [h for h in rows if h[5] == "本宫"][0][0] == TRI[p] * 2, f"{p} 宫本宫卦不是纯卦"
 
 # ---- 卦宫五行（M-1 T4 来源块所引《卜筮正宗》卷一原句）
+# 从原句解析，不手抄取值（E2-A 第 1 项审查：原先只核原句存在、值为手写）
 m = re.search(r"乾属金，坎属水，艮属土，震、巽属木，离属火，坤属土，兑属金", m1_text)
 assert m, "未找到《卜筮正宗》八宫所属原句"
-palace_wx = [["乾","金"],["兑","金"],["离","火"],["震","木"],["巽","木"],["坎","水"],["艮","土"],["坤","土"]]
+wx_of = {}
+for clause in m.group(0).split("，"):
+    trigrams, wx = clause.split("属")
+    for g in trigrams.split("、"): wx_of[g] = wx
+assert sorted(wx_of) == sorted(TRI), "八宫所属原句应恰含八卦"
+palace_wx = [[g, wx_of[g]] for g in ["乾","兑","离","震","巽","坎","艮","坤"]]   # 输出次序沿用原表
 
 # ---- 其余各表
 LINE = {"内卦·初爻":1,"内卦·二爻":2,"内卦·三爻":3,"外卦·四爻":4,"外卦·五爻":5,"外卦·上爻":6}

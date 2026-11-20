@@ -11,6 +11,7 @@
 """
 import csv
 import hashlib
+import json
 import os
 import subprocess
 import sys
@@ -102,7 +103,7 @@ def check_manifest(manifest):
             continue
         ok(sec, f"{rel} 哈希一致")
     # 反向：仓库里的数据文件都得登记
-    for top in ("ephemeris", "jieqi", "b4-data", "almanac", "contract", "research", "eot"):
+    for top in ("ephemeris", "jieqi", "b4-data", "almanac", "contract", "research", "eot", "static", "crosscheck/oracle"):
         for dirpath, _, files in os.walk(p(top)):
             for fn in files:
                 rel = os.path.relpath(os.path.join(dirpath, fn), ROOT).replace(os.sep, "/")
@@ -489,7 +490,8 @@ def check_static(manifest):
     """静态表：用生成脚本重新生成到临时目录，逐个比对哈希（需 pdftotext）"""
     import tempfile, shutil
     if not shutil.which("pdftotext"):
-        pending("静态表", "缺 pdftotext，未重新生成"); return
+        # CI 必须真正复现；只有本机缺工具时才允许降级为待补（E2-A 第 1 项审查 RC3）
+        (fail if os.environ.get("CI") else pending)("静态表", "缺 pdftotext，未重新生成"); return
     with tempfile.TemporaryDirectory() as d:
         r = subprocess.run([sys.executable, p("static/gen_static_tables.py"), d], capture_output=True, text=True)
         if r.returncode != 0:
@@ -499,6 +501,51 @@ def check_static(manifest):
             if path.startswith("static/") and path.endswith(".csv"):
                 got = sha256(os.path.join(d, os.path.basename(path)))
                 (ok if got == e["sha256"] else fail)("静态表", f"{path} 重新生成哈希{'一致' if got == e['sha256'] else '不一致'}")
+
+def check_static_oracle(manifest):
+    """L3 独立正确性：重新生成独立基准并核对哈希，再把 static/*.csv 逐格与基准比对（E2-A 第 1 项审查）"""
+    import tempfile, shutil
+    sec = "独立基准"
+    if not shutil.which("pdftotext"):
+        (fail if os.environ.get("CI") else pending)(sec, "缺 pdftotext，未重新生成独立基准"); return
+    entry = next((e for e in manifest["file"] if e["path"] == "crosscheck/oracle/static_oracle.json"), None)
+    if not entry:
+        fail(sec, "manifest 未登记 crosscheck/oracle/static_oracle.json"); return
+    with tempfile.TemporaryDirectory() as d:
+        out = os.path.join(d, "oracle.json")
+        r = subprocess.run([sys.executable, p("crosscheck/oracle/gen_oracle.py"), out], capture_output=True, text=True)
+        if r.returncode != 0:
+            fail(sec, "基准生成失败：" + (r.stderr or r.stdout).strip()[-300:]); return
+        got = sha256(out)
+        (ok if got == entry["sha256"] else fail)(sec, f"重新生成哈希{'一致' if got == entry['sha256'] else '不一致'}")
+    with open(p("crosscheck/oracle/static_oracle.json"), encoding="utf-8") as f:
+        o = json.load(f)
+    rows = lambda n: read_csv(f"static/{n}.csv")[1:]
+    diffs, cells = [], 0
+    def cmp(where, got, want):
+        nonlocal cells
+        cells += 1
+        if got != want: diffs.append(f"{where}：表 {got}，基准 {want}")
+    for b, lo, up, name, pal, pos, shi, ying in rows("liuyao_hexagrams"):
+        h = o["hexagrams"][b]
+        for k, v in zip(["lower", "upper", "name", "palace", "palace_position", "shi", "ying"], [lo, up, name, pal, pos, int(shi), int(ying)]):
+            cmp(f"六十四卦 {b}.{k}", v, h[k])
+    for pal, w in rows("liuyao_palace_wuxing"): cmp(f"八宫五行 {pal}", w, o["palace_wuxing"][pal])
+    for g, line, gz in rows("liuyao_najia"): cmp(f"纳甲 {g}{line}", gz, o["najia"][g][int(line) - 1])
+    for b, w in rows("branch_wuxing"): cmp(f"地支五行 {b}", w, o["branch_wuxing"][b])
+    for a, b, q in rows("liuyao_liuqin"): cmp(f"六亲 {a}{b}", q, o["liuqin"][f"{a}|{b}"])
+    for s, *g in rows("liuyao_liushen"):
+        for i, x in enumerate(g): cmp(f"六神 {s}{i + 1}", x, o["liushen"][s][i])
+    for gz, head, v1, v2 in rows("xunkong"):
+        for i, x in enumerate([head, v1, v2]): cmp(f"旬空 {gz}[{i}]", x, o["xunkong"][gz][i])
+    for d, x, s in rows("bazi_shishen"): cmp(f"十神 {d}{x}", s, o["shishen"][f"{d}|{x}"])
+    for s, *bs in rows("bazi_changsheng"):
+        for i, x in enumerate(bs): cmp(f"十二长生 {s}.{o['changsheng_states'][i]}", x, o["changsheng"][s][i])
+    for zhi, *cg in rows("bazi_canggan"):
+        cmp(f"藏干集合 {zhi}", sorted(x for x in cg if x), sorted(o["canggan_sets"][zhi]))
+    for x in diffs[:20]: fail(sec, x)
+    if not diffs: ok(sec, f"static/*.csv 与独立基准逐格一致：{cells} 格（含藏干集合 12 支；藏干次序无独立来源，不比）")
+
 
 def main():
     with open(p("manifest.toml"), "rb") as f:
@@ -529,6 +576,7 @@ def main():
     check_hko(jrows)
     check_eot(consts)
     check_static(manifest)
+    check_static_oracle(manifest)
 
     if "--regen" in sys.argv:
         check_regen(manifest)

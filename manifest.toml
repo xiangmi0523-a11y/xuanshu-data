@@ -220,7 +220,7 @@ note = "【用户裁决 UI-1】UI 方案一定稿，2026-11-20 冻结；契约 �
 [[file]]
 path = "static/gen_static_tables.py"
 status = "formal"
-sha256 = "7dce8c96d73a96ab25e4150408f85d3e226641f89c856978ac25c94e29db9533"
+sha256 = "10b2e0bf9d04a21240c1ee791126f20a6a3ca9a49d9b5bd4c2665f2f142366ea"
 note = "从 crosscheck/muse/ 的 M-1、M-2 交回文件提取静态表，自带一致性断言；唯一人工改值：午支本气丁（M2-R）"
 
 [[file]]
@@ -304,3 +304,33 @@ path = "crosscheck/muse/M-2_Muse已填表.pdf"
 status = "source"
 sha256 = "946c24f75899bf78fced53a59f38f43f2bb61f2602a6051069f12a3d261df7d1"
 note = "Muse 查证交回原件，静态表的唯一输入"
+
+[[file]]
+path = "static/PROVENANCE.md"
+status = "formal"
+sha256 = "557f1d99e34474b5700654dbbd9eac5ecf872af2a0280bde02a24b53210c730d"
+note = "静态表来源与准入记录正本（E2-A 第 1 项全系统审查）：规则、裁决、来源定位、补强标记、待研究事项"
+
+[[file]]
+path = "crosscheck/gemini/G-1_对照推算_ref.py"
+status = "source"
+sha256 = "41dd0f110c1dcaee9f6488d849fc8ef2e01bc78f515b59886b5ac950fb4e2b6f"
+note = "G-1 时按通行规则机械推算的对照脚本；独立基准 gen_oracle.py 的规则来源，不读 Muse 表与 static CSV"
+
+[[file]]
+path = "crosscheck/muse/M-2_Muse交回报告.pdf"
+status = "source"
+sha256 = "015a08465ccd77e4d50ac441a2d0efbe3b3e5badcbcf4e4e6f4febbdb72c5468"
+note = "M-2 Muse 交回报告；独立基准从中抽取《渊海子平评注》〈又地支藏遁歌〉原文（来源 B 行 1364）"
+
+[[file]]
+path = "crosscheck/oracle/gen_oracle.py"
+status = "formal"
+sha256 = "f987ceab61d673b9e0df005fb82c6d608332122e2cb5fffe8763b0425e97bbd9"
+note = "独立正确性基准（L3）生成脚本；verify.py 的 check_static_oracle 每次重新生成并比对"
+
+[[file]]
+path = "crosscheck/oracle/static_oracle.json"
+status = "formal"
+sha256 = "0e4e02c906a98617a901dd7b4bea1fb5f78d3916e3b262b0a3b1d62c2cb8c376"
+note = "独立正确性基准：十张静态表全部格子 + 4096 爻值动变 + 五行为我的六亲 + 藏干歌诀集合；引擎 vectors/static_oracle.json 为其副本"
