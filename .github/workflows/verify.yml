@@ -13,7 +13,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: 安装 Skyfield（MIT）
-        run: pip install "skyfield==1.55" numpy
+      - name: 安装 Skyfield（MIT）与 pdftotext
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q poppler-utils
+          pip install "skyfield==1.55" numpy
       - name: 核对 + 重跑复现
         run: python3 checks/verify.py --regen

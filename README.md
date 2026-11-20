@@ -17,10 +17,10 @@
 | `constants.toml` | 常量与已定结论：子时窗口、叠加用例年份、金值、年历舍入跨日等 |
 | `checks/verify.py` | 核对脚本（唯一判据） |
 | `ephemeris/` | JPL DE440s 星历 |
-| `jieqi/` | 节气基准表（Skyfield 版，B4 正式）与生成脚本 |
-| `b4-data/` | 日柱序列：正式文件（待放入）与 `recheck/` 独立复算件 |
-| `almanac/` | 紫金山日历比对材料 |
-| `contract/` | 契约 md 正文（待放入） |
+| `jieqi/` | 节气基准表（Skyfield 版，B4 正式）与生成脚本；`superseded/` 为已被取代的临时表 |
+| `b4-data/` | 日柱序列：正式文件【B4-18】与 `recheck/` 独立复算件 |
+| `almanac/` | 紫金山日历与 2007 年历 PDF、节气抄取结果、比对脚本 |
+| `contract/` | 契约 v1.0 与配套清单的 md 正文 |
 
 ## 怎么看对不对
 
@@ -34,10 +34,11 @@
 3. 提交说明写裁决号，例如 `B4-15: 1923 雨水、1979 大寒以基准表为准`。
 4. 等 CI 变绿。红了就是哪里没对上，不合入。
 
-## 当前待补（CI 里显示为 ⏳）
+## 当前待补（CI 里显示为 ⏳，不算失败）
 
-- `b4-data/day_pillars_1900_2100.csv`（契约登记 sha256 `374922ef…`）及其生成脚本 `b4-data/gen_day_pillars.py`
-- `almanac/zjs_terms_1900_2025_extracted.csv`（契约登记 sha256 `ee87a53d…`），放入后补比对器
-- `contract/` 下的契约 md 正文
+- `almanac/scripts/parse_zjs.py`（契约登记 sha256 `203ed647…`）：紫金山日历抄取脚本
+- `almanac/visual_check_24/`：24 条对图证据两张 PNG（`0c2864e0…`、`d55af971…`）与 README.txt
+- `jieqi/hko_dates_sample_12y.txt`：香港天文台 12 年抽样日期
+- `jieqi/superseded/gen_jieqi_table.py`（`7ecdb0ac…`）：UT1 版临时表脚本，已被取代，可选
 
 B4 仍未解除。

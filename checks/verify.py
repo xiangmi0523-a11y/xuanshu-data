@@ -95,7 +95,7 @@ def check_manifest(manifest):
                 continue
         ok(sec, f"{rel} 哈希一致")
     # 反向：仓库里的数据文件都得登记
-    for top in ("ephemeris", "jieqi", "b4-data", "almanac"):
+    for top in ("ephemeris", "jieqi", "b4-data", "almanac", "contract"):
         for dirpath, _, files in os.walk(p(top)):
             for fn in files:
                 rel = os.path.relpath(os.path.join(dirpath, fn), ROOT).replace(os.sep, "/")
@@ -150,8 +150,8 @@ def check_jieqi(header, rows):
 
 # ------------------------------------------------------------------ 3. 日柱
 def load_day_pillars(rel):
-    rows = read_csv(rel)
-    return {r[0]: r[1] for r in rows[1:]}
+    with open(p(rel), encoding="utf-8", newline="") as f:
+        return {r["date"]: r["day_pillar"] for r in csv.DictReader(f)}
 
 
 def check_day_pillars(rel, dp):
@@ -238,7 +238,106 @@ def check_constants(c, jieqi_rows, dp):
         (ok if got == want else fail)(sec, f"{e['year']} {e['term']} 基准表 {got}，登记 {want}")
 
 
-# ------------------------------------------------------------------ 5. 重跑
+
+# ------------------------------------------------------------------ 5. 年历比对【§13.5 / B4-15 / B4-17】
+def check_almanac_terms(c, jieqi_rows):
+    sec = "年历节气比对"
+    rel = "almanac/zjs_terms_1900_2025_extracted.csv"
+    if not os.path.exists(p(rel)):
+        pending(sec, "紫金山日历抄取结果尚未放入")
+        return
+    alm = c["almanac"]
+    y0, y1 = alm["almanac_years"]
+    base = {(int(r[0]), r[1]): datetime.fromisoformat(r[3]).replace(tzinfo=None) for r in jieqi_rows}
+    with open(p(rel), encoding="utf-8", newline="") as f:
+        rows = list(csv.DictReader(f))
+    seen, over, nonexact, datediff = set(), [], set(), set()
+    exact = 0
+    for r in rows:
+        key = (int(r["year"]), r["term"])
+        seen.add(key)
+        a = datetime(key[0], int(r["month"]), int(r["day"]), int(r["hour"]), int(r["minute"]))
+        s = base[key]
+        rnd = (s + timedelta(seconds=30)).replace(second=0, microsecond=0)
+        if abs((a - s).total_seconds()) > alm["tolerance_seconds"]:
+            over.append(f"{key[0]} {key[1]} 年历 {a:%m-%d %H:%M} 基准 {s:%m-%d %H:%M:%S}")
+        if a == rnd:
+            exact += 1
+        else:
+            nonexact.add(f"{key[0]} {key[1]}")
+        if a.date() != s.date():
+            datediff.add(f"{key[0]} {key[1]}")
+    want = {(y, t) for (y, t) in base if y0 <= y <= y1}
+    if seen != want:
+        fail(sec, f"抄取条目与 {y0}–{y1} 基准不对应：缺 {len(want - seen)}，多 {len(seen - want)}")
+    if over:
+        for o in over[:10]:
+            fail(sec, f"差异超过 1 分钟，需查影印本：{o}")
+    else:
+        ok(sec, f"{len(rows)} 条全部在 ±1 分钟内；{exact} 条与基准四舍五入到分完全相同，{len(nonexact)} 条差 1 分钟")
+    cross = {f"{e['year']} {e['term']}" for e in alm["rounding_cross_midnight"]}
+    extra = datediff - cross
+    (ok if not extra else fail)(sec, "日期不同的条目都已登记为舍入跨日" if not extra else f"未登记的跨日条目：{sorted(extra)}")
+    checked = set(alm["visual_checked"])
+    flagged = nonexact | datediff
+    if flagged == checked:
+        ok(sec, f"需要对图的 {len(flagged)} 条与已对图清单完全一致")
+    else:
+        fail(sec, f"需对图未对：{sorted(flagged - checked)}；清单多出：{sorted(checked - flagged)}")
+
+
+def check_almanac_days(dp):
+    sec = "年历日干支比对"
+    pdf = "almanac/紫金山天文台_1900-2025年日历.pdf"
+    if not os.path.exists(p(pdf)):
+        pending(sec, "紫金山日历 PDF 尚未放入")
+        return
+    if not dp:
+        pending(sec, "日柱序列尚未放入")
+        return
+    import calendar, re, shutil
+    if not shutil.which("pdftotext"):
+        pending(sec, "本机没有 pdftotext，跳过（CI 会装）")
+        return
+    with tempfile.TemporaryDirectory() as td:
+        txt = os.path.join(td, "zjs.txt")
+        subprocess.run(["pdftotext", "-layout", p(pdf), txt], check=True)
+        lines = open(txt, encoding="utf-8").read().split("\n")
+    gz = re.compile(r"[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥]")
+    year = months = None
+    seen, bad, rowfail = Counter(), [], 0
+    for line in lines:
+        m = re.search(r"公元\s*(\d{4})\s*年", line)
+        if m:
+            year, months = int(m.group(1)), None
+            continue
+        mm = re.findall(r"(\d{1,2})\s*月", line)
+        if len(mm) == 4 and "日" not in line and year:
+            months = [int(x) for x in mm]
+            continue
+        m = re.match(r"\s*(\d{1,2})\s+\S", line)
+        if m and months and year and not re.search(r"[时分]", line):
+            d = int(m.group(1))
+            if not 1 <= d <= 31:
+                continue
+            toks = gz.findall(line[m.end() - 1:])
+            have = [mo for mo in months if d <= calendar.monthrange(year, mo)[1]]
+            if len(toks) != len(have):
+                rowfail += 1
+                continue
+            for mo, t in zip(have, toks):
+                k = f"{year}-{mo:02d}-{d:02d}"
+                seen[k] += 1
+                if dp.get(k) != t:
+                    bad.append(f"{k} 年历 {t} 序列 {dp.get(k)}")
+    expect = (date(2025, 12, 31) - date(1900, 1, 1)).days + 1
+    dup = sum(1 for v in seen.values() if v > 1)
+    if bad or rowfail or len(seen) != expect or dup:
+        fail(sec, f"覆盖 {len(seen)}/{expect} 天，不一致 {len(bad)}，行解析失败 {rowfail}，重复 {dup}；{bad[:3]}")
+    else:
+        ok(sec, f"1900–2025 共 {expect} 天逐日比对，年历与日柱序列全部一致")
+
+# ------------------------------------------------------------------ 6. 重跑
 def check_regen(manifest):
     sec = "重跑复现"
     for e in manifest["file"]:
@@ -277,10 +376,8 @@ def main():
 
     check_constants(consts, jrows, dp_formal or dp_recheck)
 
-    if os.path.exists(p("almanac/zjs_terms_1900_2025_extracted.csv")):
-        pending("年历比对", "抄取结果已放入，比对器待按其列格式补写")
-    else:
-        pending("年历比对", "紫金山日历抄取结果尚未放入")
+    check_almanac_terms(consts, jrows)
+    check_almanac_days(dp_formal or dp_recheck)
 
     if "--regen" in sys.argv:
         check_regen(manifest)
