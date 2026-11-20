@@ -19,8 +19,8 @@
 [[file]]
 path = "contract/玄枢数据契约_v1.0.md"
 status = "formal"
-sha256 = "8df17fe70634c7e785566fb042e4d809d1e75f53899b05a5974ba73ca417f1c3"
-note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1、UI-1、E1-1、E1-2、PD-1、E1-C、M1-R、M2-R）；PDF 由此导出，不入库"
+sha256 = "c42705b35d58afba6e369f9ae84e02c022cab0eaf762205ad5826795263e69d4"
+note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1、UI-1、E1-1、E1-2、PD-1、E1-C、M1-R、M2-R、E2-A）；PDF 由此导出，不入库"
 
 [[file]]
 path = "contract/玄枢_v0.1.2_修订配套清单.md"
