@@ -190,3 +190,9 @@ path = "almanac/visual_check_24/chat_copy/visual_check_13-24.png"
 status = "source"
 sha256 = "902a994a7e317c7c2c7c9262d6ca1cc6038876e7a29a5008f05594ac124c3b33"
 note = "原件 d55af971 经聊天上传后的重新编码副本；内容为 #13–#24 对图"
+
+[[file]]
+path = "almanac/visual_check_24/visual_check_24.zip"
+status = "source"
+sha256 = "a4b57d0f068a880b757bc73f2b3a4025890e3571ca8396c83bf8b7b50e60bfbe"
+note = "用户 2026-11-20 网页上传；内含 README.txt（e8c36ead）与两张 PNG（48bb3141、902a994a），与 chat_copy/ 相同，不是原件 0c2864e0 / d55af971"
