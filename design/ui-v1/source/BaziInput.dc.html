@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>八字 · 出生资料 · 已填写示例</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F4A68;text-decoration:none}a:hover{color:#1E3550}
+input{font:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 1380px; background: #F3EEE6; font-family: 'Noto Sans SC', sans-serif; color: #1E2833; display: flex; flex-direction: column; overflow: hidden">
+
+  <header style="position: relative; padding: 54px 16px 14px; display: flex; align-items: center; gap: 8px">
+    <svg aria-hidden="true" width="390" height="110" viewBox="0 0 390 110" style="position: absolute; left: 0; top: 0"><path d="M0 92 C50 70 90 62 130 78 C170 52 214 48 250 70 C290 54 340 60 390 76 L390 110 L0 110Z" fill="#8C99A8" opacity="0.18"></path></svg>
+    <a href="Main.dc.html" aria-label="返回首页" style="position: relative; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E2833" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <h1 style="position: relative; margin: 0; flex: 1; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 20px; letter-spacing: 2px">出生资料</h1>
+    <span style="position: relative; font-size: 12px; color: #4F5966; background: #EDE6DA; border-radius: 8px; padding: 2px 8px">已填写示例</span>
+  </header>
+
+  <main style="display: flex; flex-direction: column; gap: 14px; padding: 4px 20px 0">
+
+    <section style="background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="nm" style="font-size: 13px; color: #4F5966">资料名称</label>
+        <input id="nm" value="示例甲" style="height: 44px; box-sizing: border-box; padding: 0 12px; border: 1px solid #DCD0BE; border-radius: 12px; background: #FFFDF9; color: #1E2833; font-size: 16px">
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 13px; color: #4F5966">性别 *</span>
+        <div role="group" aria-label="性别" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 4px; background: #EDE6DA; border-radius: 12px">
+          <button type="button" aria-pressed="true" style="height: 40px; border: none; border-radius: 9px; background: #2F4A68; color: #FBF8F2; font: inherit; font-size: 15px; font-weight: 700">男</button>
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 15px">女</button>
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 15px">未知</button>
+        </div>
+        <span style="font-size: 12px; color: #5E6874">新建时三项都不预选，须你主动选择。选“未知”仍可排盘，但不显示大运。</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 13px; color: #4F5966">时间精度 *</span>
+        <div role="group" aria-label="时间精度" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 4px; background: #EDE6DA; border-radius: 12px">
+          <button type="button" aria-pressed="true" style="height: 40px; border: none; border-radius: 9px; background: #2F4A68; color: #FBF8F2; font: inherit; font-size: 13px; font-weight: 700">精确到分钟</button>
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 13px">只知时辰</button>
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 13px">不知道时辰</button>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <label for="dt" style="font-size: 13px; color: #4F5966">出生日期 *</label>
+          <input id="dt" value="1990年8月15日" style="height: 44px; box-sizing: border-box; padding: 0 12px; border: 1px solid #DCD0BE; border-radius: 12px; background: #FFFDF9; color: #1E2833; font-size: 15px">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <label for="tm" style="font-size: 13px; color: #4F5966">当地钟表时间 *</label>
+          <input id="tm" value="14:30" style="height: 44px; box-sizing: border-box; padding: 0 12px; border: 1px solid #DCD0BE; border-radius: 12px; background: #FFFDF9; color: #1E2833; font-size: 15px">
+        </div>
+      </div>
+      <span style="font-size: 12px; color: #5E6874; margin-top: -8px">按出生证明上的时间填写，不必自行换算夏令时。</span>
+    </section>
+
+    <section style="background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; align-items: center; justify-content: space-between">
+        <span style="font-size: 13px; color: #4F5966">出生地点 *</span>
+        <button type="button" style="height: 32px; padding: 0 12px; border: 1px solid #C9BBA6; border-radius: 16px; background: transparent; color: #2F4A68; font: inherit; font-size: 13px">更改</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 2px">
+        <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 17px">北京市 · 东城区</span>
+        <span style="font-size: 13px; color: #4F5966">东经 116.40° · 北纬 39.90°</span>
+      </div>
+      <div style="border-top: 1px solid #E4DACB; padding-top: 12px; display: flex; flex-direction: column; gap: 8px">
+        <div style="display: flex; align-items: center; gap: 8px">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="2" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>
+          <span style="font-weight: 700; font-size: 14px">时区已解析：Asia/Shanghai</span>
+        </div>
+        <div style="background: #F2E5CF; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px">
+          <span style="font-size: 13px; font-weight: 700; color: #6A430F">当日内地实行夏令时（UTC+09:00）</span>
+          <span style="font-size: 13px; color: #3F4955">钟表 14:30 = 北京时间 13:30（UTC+08:00）。不在切换的那一小时内，无需确认。</span>
+        </div>
+        <details style="font-size: 12px; color: #4F5966">
+          <summary style="cursor: pointer; min-height: 32px; display: flex; align-items: center">哪些情况必须先确认时区</summary>
+          <p style="margin: 4px 0 0; line-height: 1.7">1970 年以前出生（1949 年以前内地出生一律确认）；地点或时区有歧义；出生时刻落在夏令时切换的重复或跳过的那一小时；内地、港、澳、台以外的地区。未确认则不出结果。</p>
+        </details>
+      </div>
+    </section>
+
+    <section style="background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; padding: 4px 16px; display: flex; flex-direction: column">
+      <div style="display: flex; align-items: center; gap: 12px; min-height: 60px; border-bottom: 1px solid #E4DACB">
+        <span style="display: flex; flex-direction: column; flex: 1; gap: 2px"><span style="font-size: 15px; font-weight: 500">真太阳时</span><span style="font-size: 12px; color: #5E6874">经度修正 + 均时差；关闭则结果页标“使用钟表时间”</span></span>
+        <button type="button" role="switch" aria-checked="true" aria-label="真太阳时" style="width: 52px; height: 32px; border: none; border-radius: 16px; background: #2F4A68; position: relative; flex-shrink: 0"><span style="position: absolute; top: 3px; right: 3px; width: 26px; height: 26px; border-radius: 13px; background: #FBF8F2"></span></button>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; min-height: 60px">
+        <span style="display: flex; flex-direction: column; flex: 1; gap: 2px"><span style="font-size: 15px; font-weight: 500">子时规则</span><span style="font-size: 12px; color: #5E6874">00:00 换日 · 晚子、早子时干均按次日日干起</span></span>
+        <span style="display: flex; align-items: center; gap: 4px; font-size: 12px; color: #4F5966; flex-shrink: 0">
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F5966" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>第一版锁定
+        </span>
+      </div>
+    </section>
+
+    <section style="background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+      <h2 style="margin: 0; font-size: 14px; font-weight: 700">换算顺序 · 每项只算一次</h2>
+      <ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.6; color: #3F4955">
+        <li>出生地钟表时间，按已确认的时区与夏令时，换成统一时刻</li>
+        <li>交节按统一时刻判定，与经度无关</li>
+        <li>日柱、时柱：钟表时间基准用北京时间；真太阳时基准再加经度修正与均时差</li>
+      </ol>
+    </section>
+
+    <p style="margin: 0; font-size: 12px; color: #5E6874; line-height: 1.6; padding: 0 4px">南半球出生暂不支持：地点选在南半球时不提供排盘入口。</p>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 4px">
+      <a href="ResultNormal.dc.html" style="height: 52px; border-radius: 26px; background: #2F4A68; color: #FBF8F2; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 17px; letter-spacing: 6px">排盘</a>
+      <button type="button" style="height: 48px; border-radius: 24px; border: 1px solid #C9BBA6; background: transparent; color: #2F4A68; font: inherit; font-size: 15px">存为未完成草稿</button>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1380}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

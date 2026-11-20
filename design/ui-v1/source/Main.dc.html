@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>玄枢 · 首页</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F4A68;text-decoration:none}a:hover{color:#1E3550}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F3EEE6; font-family: 'Noto Sans SC', sans-serif; color: #1E2833; position: relative; overflow: hidden; display: flex; flex-direction: column">
+
+  <div style="position: relative; height: 300px; flex-shrink: 0">
+    <svg aria-hidden="true" width="390" height="300" viewBox="0 0 390 300" style="position: absolute; inset: 0">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6E1D9"></stop><stop offset="1" stop-color="#F3EEE6"></stop></linearGradient>
+        <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3EEE6" stop-opacity="0"></stop><stop offset="0.6" stop-color="#F3EEE6" stop-opacity="0.85"></stop><stop offset="1" stop-color="#F3EEE6"></stop></linearGradient>
+        <filter id="soft"><feGaussianBlur stdDeviation="1.4"></feGaussianBlur></filter>
+      </defs>
+      <rect width="390" height="300" fill="url(#sky)"></rect>
+      <circle cx="318" cy="92" r="26" fill="#E8C9A1" opacity="0.45"></circle>
+      <path filter="url(#soft)" d="M0 196 C40 160 70 140 100 152 C128 112 160 92 190 124 C220 104 252 80 284 114 C312 94 350 112 390 142 L390 300 L0 300Z" fill="#B9C2CC" opacity="0.55"></path>
+      <path filter="url(#soft)" d="M0 232 C30 204 62 186 92 200 C112 166 142 152 166 182 C186 172 202 168 222 188 C252 148 292 140 322 178 C346 164 370 168 390 182 L390 300 L0 300Z" fill="#8C99A8" opacity="0.6"></path>
+      <rect x="0" y="200" width="390" height="40" fill="#F3EEE6" opacity="0.45"></rect>
+      <path filter="url(#soft)" d="M0 268 C40 240 72 232 110 250 C140 226 172 222 202 244 C240 218 280 222 312 246 C340 232 370 236 390 248 L390 300 L0 300Z" fill="#5E6E80" opacity="0.55"></path>
+      <rect x="0" y="230" width="390" height="70" fill="url(#mist)"></rect>
+    </svg>
+
+    <button type="button" aria-label="设置" style="position: absolute; top: 54px; right: 16px; width: 44px; height: 44px; border: none; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2833" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"></path></svg>
+    </button>
+
+    <div style="position: absolute; top: 104px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 10px">
+      <h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-weight: 900; font-size: 60px; letter-spacing: 10px; line-height: 1; color: #1E2833; padding-left: 10px">玄枢</h1>
+      <p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 14px; letter-spacing: 6px; color: #3F4955; padding-left: 6px">研易 · 致用 · 守正</p>
+    </div>
+  </div>
+
+  <div style="margin: -18px 20px 0; position: relative; display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(251,248,242,0.92); border: 1px solid #E4DACB; border-radius: 16px">
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 10px; background: #2F4A68; color: #F3EEE6; flex-shrink: 0">
+      <span style="font-size: 10px; line-height: 1.2">十一月</span>
+      <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 18px; line-height: 1.1">20</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+      <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 15px; letter-spacing: 1px">丙午年 · 己亥月 · 戊戌日</span>
+      <span style="font-size: 12px; color: #4F5966">立冬后第 13 天 · 11月22日 15:23 交小雪</span>
+    </div>
+  </div>
+
+  <div style="margin: 12px 20px 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+    <a href="BaziInput.dc.html" style="display: flex; align-items: center; gap: 12px; min-height: 76px; box-sizing: border-box; padding: 14px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; color: #1E2833">
+      <span style="width: 44px; height: 44px; border-radius: 22px; background: #EDE4D6; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+        <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E2833" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a4.5 4.5 0 0 1 0 9 4.5 4.5 0 0 0 0 9" ></path><circle cx="12" cy="7.5" r="1.2" fill="#1E2833"></circle><circle cx="12" cy="16.5" r="1.2"></circle></svg>
+      </span>
+      <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">八字排盘</span><span style="font-size: 12px; color: #5E6874">四柱 · 十神</span></span>
+    </a>
+    <a href="Liuyao.dc.html" style="display: flex; align-items: center; gap: 12px; min-height: 76px; box-sizing: border-box; padding: 14px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; color: #1E2833">
+      <span style="width: 44px; height: 44px; border-radius: 22px; background: #E4E8EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F4A68" stroke-width="2" stroke-linecap="round"><path d="M4 5h16M4 9.5h6.5M13.5 9.5H20M4 14h16M4 18.5h6.5M13.5 18.5H20"></path></svg>
+      </span>
+      <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">六爻装卦</span><span style="font-size: 12px; color: #5E6874">起卦 · 卦象</span></span>
+    </a>
+    <button type="button" style="display: flex; align-items: center; gap: 12px; min-height: 76px; box-sizing: border-box; padding: 14px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; color: #1E2833; font: inherit; text-align: left; cursor: pointer">
+      <span style="width: 44px; height: 44px; border-radius: 22px; background: #F2E3CE; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7A4E14" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 9.5h17M8 3v4M16 3v4M8 13h3v3H8z"></path></svg>
+      </span>
+      <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">历法查询</span><span style="font-size: 12px; color: #5E6874">节气 · 干支</span></span>
+    </button>
+    <button type="button" style="display: flex; align-items: center; gap: 12px; min-height: 76px; box-sizing: border-box; padding: 14px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; color: #1E2833; font: inherit; text-align: left; cursor: pointer">
+      <span style="width: 44px; height: 44px; border-radius: 22px; background: #E4E8EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F4A68" stroke-width="1.6" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"></path><path d="M12 9.5l2 3.5-2 3.5-2-3.5z"></path></svg>
+      </span>
+      <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">风水查表</span><span style="font-size: 12px; color: #5E6874">八宅方位</span></span>
+    </button>
+    <a href="GujiSearch.dc.html" style="display: flex; align-items: center; gap: 12px; min-height: 76px; box-sizing: border-box; padding: 14px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; color: #1E2833">
+      <span style="width: 44px; height: 44px; border-radius: 22px; background: #F2E3CE; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7A4E14" stroke-width="1.6" stroke-linejoin="round"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"></path><path d="M5 17a3 3 0 0 1 3-3h11M9 8h6"></path></svg>
+      </span>
+      <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">古籍检索</span><span style="font-size: 12px; color: #5E6874">本地全文</span></span>
+    </a>
+    <a href="History.dc.html" style="display: flex; align-items: center; gap: 12px; min-height: 76px; box-sizing: border-box; padding: 14px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; color: #1E2833">
+      <span style="width: 44px; height: 44px; border-radius: 22px; background: #E4E8EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F4A68" stroke-width="1.6" stroke-linecap="round"><circle cx="6" cy="5" r="2"></circle><circle cx="6" cy="19" r="2"></circle><circle cx="18" cy="9" r="2"></circle><path d="M6 7v10M18 11c0 4-6 3-11.2 6.6"></path></svg>
+      </span>
+      <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">研究分支</span><span style="font-size: 12px; color: #5E6874">记录 · 对照</span></span>
+    </a>
+  </div>
+
+  <a href="States.dc.html" style="margin: 12px 20px 0; display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #E3E9F1; border: 1px dashed #8EA3BC; border-radius: 16px; color: #1E2833">
+    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F4A68" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg>
+    <span style="display: flex; flex-direction: column; gap: 2px; flex: 1"><span style="font-weight: 700; font-size: 14px; color: #2F4A68">研究模式</span><span style="font-size: 12px; color: #3F4955">规则尚未正式批准，结果均标“研究 · 非正式”。点此看各状态含义</span></span>
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F4A68" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"></path></svg>
+  </a>
+
+  <nav aria-label="主导航" style="margin-top: auto; height: 84px; box-sizing: border-box; padding: 8px 24px 24px; display: flex; justify-content: space-around; background: #FBF8F2; border-top: 1px solid #E4DACB">
+    <a href="Main.dc.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 64px; color: #2F4A68; font-size: 11px; font-weight: 700">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="#2F4A68"><path d="M3 11 12 3l9 8v10h-6v-6H9v6H3z"></path></svg>首页
+    </a>
+    <a href="History.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 64px; color: #4F5966; font-size: 11px">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F5966" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>历史
+    </a>
+    <a href="Settings.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 64px; color: #4F5966; font-size: 11px">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F5966" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg>设置
+    </a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

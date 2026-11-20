@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>状态组件清单</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 880px; height: 1410px; box-sizing: border-box; padding: 48px; background: #F3EEE6; font-family: 'Noto Sans SC', sans-serif; color: #1E2833; display: flex; flex-direction: column; gap: 28px">
+
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-weight: 900; font-size: 32px; letter-spacing: 4px">状态组件清单</h1>
+    <p style="margin: 0; font-size: 14px; color: #3F4955">每种状态都由“图形 + 文字 + 颜色”三者共同区分，不只靠颜色；在主界面、详情、搜索、历史、导出、引用中样式一致。</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 16px">
+      <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 10px; border-radius: 13px; color: #24573F; background: #E2EDE5; border: 1px solid #9CC2AB; font-size: 13px; font-weight: 700"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="3.2" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>正式</span>
+      <span style="font-size: 15px; font-weight: 700">正式 FORMAL</span>
+      <span style="font-size: 13px; line-height: 1.65; color: #3F4955">实线胶囊 + 勾。规则已经批准，正常展示。</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 16px">
+      <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 10px; border-radius: 13px; border: 1px dashed #2F4A68; color: #2F4A68; font-size: 13px; font-weight: 700"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2F4A68" stroke-width="2.4"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"></path></svg>研究 · 非正式</span>
+      <span style="font-size: 15px; font-weight: 700">研究 / 非正式 NON_FORMAL</span>
+      <span style="font-size: 13px; line-height: 1.65; color: #3F4955">虚线胶囊 + 烧瓶。每个出口都带，旁边写原因；导出文件头同样标注。</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 16px">
+      <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 10px; border-radius: 13px; background: #8E2F22; color: #FBF8F2; font-size: 13px; font-weight: 700"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FBF8F2" stroke-width="2.8" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle><path d="M6.5 6.5l11 11"></path></svg>阻断</span>
+      <span style="font-size: 15px; font-weight: 700">阻断 BLOCKED</span>
+      <span style="font-size: 13px; line-height: 1.65; color: #3F4955">实心朱色 + 禁止符。不出任何柱，只列缺什么、怎样补齐；草稿用灰色虚线框，不像命盘。</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 16px">
+      <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 10px; border-radius: 6px; background: #7A4E14; color: #FBF8F2; font-size: 13px; font-weight: 700"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FBF8F2" stroke-width="2.8" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>有降级 · 2 项</span>
+      <span style="font-size: 15px; font-weight: 700">降级</span>
+      <span style="font-size: 13px; line-height: 1.65; color: #3F4955">方角赭色 + 下箭头，写明条数并列出全部原因；空缺的柱用斜纹虚框“留空”。</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 16px">
+      <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 10px; border-radius: 13px; background: #4E3F70; color: #FBF8F2; font-size: 13px; font-weight: 700"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FBF8F2" stroke-width="2.8" stroke-linecap="round"><path d="M7 4v5a5 5 0 0 0 5 5 5 5 0 0 0 5-5V4M12 14v6"></path></svg>待确认候选</span>
+      <span style="font-size: 15px; font-weight: 700">歧义候选</span>
+      <span style="font-size: 13px; line-height: 1.65; color: #3F4955">按柱显示 A / B：建议候选为实线框，另一候选为虚线框。确认前不作结论、不能保存。</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 16px">
+      <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 10px; border-radius: 13px; border: 1.5px solid #8A6400; color: #6F5300; font-size: 13px; font-weight: 700"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6F5300" stroke-width="2.4" stroke-linejoin="round"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17v.5"></path></svg>交节边界</span>
+      <span style="font-size: 15px; font-weight: 700">边界告警</span>
+      <span style="font-size: 13px; line-height: 1.65; color: #3F4955">空心描边 + 三角。当月节气中的“节”前后 ±2 小时；立春前后 ±24 小时。子时边界提示用同一样式，附原文说明。</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 16px">
+      <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; height: 24px; padding: 0 9px; border-radius: 12px; background: #ECE8E1; border: 1px dotted #6E7783; color: #4F5966; font-size: 12px; font-weight: 500"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F5966" stroke-width="2.2" stroke-linecap="round"><path d="M3 12h4M10 12h4M17 12h4"></path></svg>远期外推</span>
+      <span style="font-size: 15px; font-weight: 700">远期外推</span>
+      <span style="font-size: 13px; line-height: 1.65; color: #3F4955">小号点线提示，只作提示，不影响结果。2027 年及以后的节气结果显示。</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px; background: #FBF8F2; border: 1.5px solid #A13A2A; border-radius: 16px">
+      <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 10px; border-radius: 6px; background: #FBE9E4; border: 1px solid #C88E82; color: #7A2318; font-size: 13px; font-weight: 700"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7A2318" stroke-width="2.4" stroke-linejoin="round"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17v.5"></path></svg>治理警告</span>
+      <span style="font-size: 15px; font-weight: 700">治理警告</span>
+      <span style="font-size: 13px; line-height: 1.65; color: #3F4955">整条记录加朱框，四要素齐全：变体已撤销批准、撤销时间、撤销依据、重新计算建议。复制、导出、改名都去不掉。</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 16px">
+    <div style="display: flex; flex-direction: column; gap: 12px; padding: 18px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 16px">
+      <span style="font-size: 15px; font-weight: 700">出口一致性：状态跟着结果走</span>
+      <span style="font-size: 13px; line-height: 1.65; color: #3F4955">非正式标记与治理警告必须出现在下列每一个出口，样式相同。非正式标签旁写原因，原因取自该结果自己的状态记录，不统一套用。</span>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px"><span style="display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; background: #F1EADF; border-radius: 10px; font-size: 13px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="3" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>首页记录摘要</span><span style="display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; background: #F1EADF; border-radius: 10px; font-size: 13px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="3" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>结果详情</span><span style="display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; background: #F1EADF; border-radius: 10px; font-size: 13px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="3" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>搜索结果</span><span style="display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; background: #F1EADF; border-radius: 10px; font-size: 13px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="3" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>历史记录</span><span style="display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; background: #F1EADF; border-radius: 10px; font-size: 13px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="3" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>引用</span><span style="display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; background: #F1EADF; border-radius: 10px; font-size: 13px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="3" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>复制</span><span style="display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; background: #F1EADF; border-radius: 10px; font-size: 13px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="3" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>导出文件</span><span style="display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; background: #F1EADF; border-radius: 10px; font-size: 13px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="3" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>缓存列表</span></div>
+      <span style="font-size: 12px; line-height: 1.6; color: #4F5966">正式 / 非正式是每条结果、每个快照的状态，不是整个 App 的状态；首页只放“研究模式”提示条。</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px; background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 16px">
+      <span style="font-size: 15px; font-weight: 700">导出文件头（必含）</span>
+      <div style="display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; padding: 12px; background: #1E2833; border-radius: 10px; color: #E9E4DA; font-size: 12px; line-height: 1.5">
+        <span style="color: #B9C2CC">结果编号</span><span>snapshot_id</span>
+        <span style="color: #B9C2CC">指纹</span><span>结果指纹</span>
+        <span style="color: #B9C2CC">状态</span><span>正式 / 非正式（附原因）</span>
+        <span style="color: #B9C2CC">导出时间</span><span>到分钟</span>
+        <span style="color: #B9C2CC">治理警告</span><span>如有，四要素全文</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 32px; align-items: flex-start">
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 13px; font-weight: 700; color: #4F5966">配色</span>
+      <span style="display: flex; gap: 10px">
+        <span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #3F4955"><span style="width: 44px; height: 44px; border-radius: 22px; background: #2F4A68"></span>深靛</span>
+        <span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #3F4955"><span style="width: 44px; height: 44px; border-radius: 22px; background: #F3EEE6; border: 1px solid #DCD0BE"></span>宣纸</span>
+        <span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #3F4955"><span style="width: 44px; height: 44px; border-radius: 22px; background: #8C99A8"></span>远山</span>
+        <span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #3F4955"><span style="width: 44px; height: 44px; border-radius: 22px; background: #E8C9A1"></span>杏色</span>
+        <span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #3F4955"><span style="width: 44px; height: 44px; border-radius: 22px; background: #1E2833"></span>墨</span>
+      </span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 13px; font-weight: 700; color: #4F5966">字体</span>
+      <span style="font-family: 'Noto Serif SC', serif; font-weight: 900; font-size: 26px">思源宋体 · 标题与干支</span>
+      <span style="font-size: 15px; color: #3F4955">思源黑体 · 正文与说明</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 13px; font-weight: 700; color: #4F5966">五行字色</span>
+      <span style="font-family: 'Noto Serif SC', serif; font-weight: 900; font-size: 26px; letter-spacing: 6px"><span style="color: #3E6B45">木</span><span style="color: #9A3B2A">火</span><span style="color: #8A5A1F">土</span><span style="color: #6B5A2A">金</span><span style="color: #2F4A68">水</span></span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":880,"height":1410}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

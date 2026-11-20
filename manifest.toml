@@ -19,8 +19,8 @@
 [[file]]
 path = "contract/玄枢数据契约_v1.0.md"
 status = "formal"
-sha256 = "770c306148f5deb2cfaa7bf555376253af3bb2d742b85c1e14bee5e06b075488"
-note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1）；PDF 由此导出，不入库"
+sha256 = "c31f544ac74f3e608a9a6850e76a20e1206514e03a1ed4d4be7b1f9dfd0a4b7c"
+note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1、UI-1）；PDF 由此导出，不入库"
 
 [[file]]
 path = "contract/玄枢_v0.1.2_修订配套清单.md"
@@ -208,3 +208,10 @@ note = "B1 均时差逐日表【B1-1】；视太阳时 − 平太阳时，单位
 path = "eot/gen_eot_skyfield.py"
 status = "formal"
 sha256 = "e782dee0dd24f46570137c11a21c97e1812ff14d99d65ee83e98be883ac7f87d"
+
+# ---------------------------------------------------------------- 界面设计
+[[file]]
+path = "design/ui-v1/玄枢_UI方案一_东方雅致_定稿.pdf"
+status = "frozen"
+sha256 = "a0233465c43ffb35e7ffb4e7d49ed7ca172f9467de14731b65a58cc168dc1e03"
+note = "【用户裁决 UI-1】UI 方案一定稿，2026-11-20 冻结；契约 §9.8"

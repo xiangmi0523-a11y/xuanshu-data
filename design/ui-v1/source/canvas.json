@@ -1,0 +1,220 @@
+{
+  "v": 3,
+  "attachments": {},
+  "createdOnFiles": {
+    "at": "2026-11-20T12:10:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "n1",
+    "n2"
+  ],
+  "pages": [],
+  "title": "玄枢 · 方案一 东方雅致 · 关键页面",
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "01 首页",
+      "radius": 44
+    },
+    "BaziInput.dc.html": {
+      "x": 470,
+      "y": 0,
+      "w": 390,
+      "h": 1380,
+      "title": "02a 出生资料 · 已填写示例",
+      "radius": 44
+    },
+    "Settings.dc.html": {
+      "x": 1880,
+      "y": 0,
+      "w": 390,
+      "h": 1170,
+      "title": "07 参数设置",
+      "radius": 44
+    },
+    "About.dc.html": {
+      "x": 2350,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "12 关于 / 致谢",
+      "radius": 44
+    },
+    "ResultNormal.dc.html": {
+      "x": 0,
+      "y": 1760,
+      "w": 390,
+      "h": 1560,
+      "title": "03 八字结果 · 正常完整",
+      "radius": 44
+    },
+    "ResultAmbiguous.dc.html": {
+      "x": 470,
+      "y": 1760,
+      "w": 390,
+      "h": 1580,
+      "title": "04 八字结果 · 歧义候选",
+      "radius": 44
+    },
+    "ResultDegraded.dc.html": {
+      "x": 940,
+      "y": 1760,
+      "w": 390,
+      "h": 1080,
+      "title": "05 八字结果 · 降级",
+      "radius": 44
+    },
+    "ResultBlocked.dc.html": {
+      "x": 1410,
+      "y": 1760,
+      "w": 390,
+      "h": 930,
+      "title": "06 八字结果 · 阻断",
+      "radius": 44
+    },
+    "Liuyao.dc.html": {
+      "x": 0,
+      "y": 3700,
+      "w": 390,
+      "h": 1160,
+      "title": "08 六爻 · 起卦与装卦",
+      "radius": 44
+    },
+    "GujiSearch.dc.html": {
+      "x": 470,
+      "y": 3700,
+      "w": 390,
+      "h": 960,
+      "title": "09a 古籍检索结果",
+      "radius": 44
+    },
+    "GujiText.dc.html": {
+      "x": 940,
+      "y": 3700,
+      "w": 390,
+      "h": 890,
+      "title": "09b 古籍原文",
+      "radius": 44
+    },
+    "History.dc.html": {
+      "x": 1410,
+      "y": 3700,
+      "w": 390,
+      "h": 1460,
+      "title": "10 历史记录 / 快照",
+      "radius": 44
+    },
+    "DeleteProfile.dc.html": {
+      "x": 1880,
+      "y": 3700,
+      "w": 390,
+      "h": 870,
+      "title": "11 删除个人资料",
+      "radius": 44
+    },
+    "States.dc.html": {
+      "x": 0,
+      "y": 5540,
+      "w": 880,
+      "h": 1410,
+      "title": "状态组件清单",
+      "radius": 16
+    },
+    "BaziInputShichen.dc.html": {
+      "x": 940,
+      "y": 0,
+      "w": 390,
+      "h": 1270,
+      "title": "02b 新建出生资料 · 只知时辰",
+      "radius": 44
+    },
+    "BaziInputUnknown.dc.html": {
+      "x": 1410,
+      "y": 0,
+      "w": 390,
+      "h": 920,
+      "title": "02c 出生资料 · 不知道时辰",
+      "radius": 44
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "BaziInput.dc.html",
+    "BaziInputShichen.dc.html",
+    "BaziInputUnknown.dc.html",
+    "Settings.dc.html",
+    "About.dc.html",
+    "ResultNormal.dc.html",
+    "ResultAmbiguous.dc.html",
+    "ResultDegraded.dc.html",
+    "ResultBlocked.dc.html",
+    "Liuyao.dc.html",
+    "GujiSearch.dc.html",
+    "GujiText.dc.html",
+    "History.dc.html",
+    "DeleteProfile.dc.html",
+    "States.dc.html"
+  ],
+  "notes": {
+    "t1": {
+      "x": 0,
+      "y": -260,
+      "text": "主流程 · 入口与设置",
+      "kind": "title1",
+      "maxW": 2740,
+      "w": 240
+    },
+    "t2": {
+      "x": 0,
+      "y": 1500,
+      "text": "八字结果 · 四种状态",
+      "kind": "title1",
+      "maxW": 1800,
+      "w": 240
+    },
+    "t3": {
+      "x": 0,
+      "y": 3440,
+      "text": "六爻 · 古籍 · 历史 · 删除",
+      "kind": "title1",
+      "maxW": 2270,
+      "w": 240
+    },
+    "t4": {
+      "x": 0,
+      "y": 5280,
+      "text": "状态组件清单",
+      "kind": "title1",
+      "maxW": 880,
+      "w": 240
+    },
+    "n1": {
+      "x": 2820,
+      "y": 0,
+      "w": 360,
+      "fill": "orange",
+      "size": "s",
+      "text": "设计说明（方案一 · 东方雅致 · 修订 1）\n\n· 命例四柱、真太阳时、交节时刻由引擎 E1 用冻结表实算；十神、藏干、神煞按通行表。\n· 大运、装卦（纳甲、世应、六亲、六神）在规则验收和静态表核实前不显示。\n· 版本名、底本名一律不虚构；未核实前显示“待核实”。\n· 正式 / 非正式是每条结果的状态；首页只放“研究模式”提示条，“正式”只在标明“状态示例”的区域出现。"
+    },
+    "n2": {
+      "x": 2820,
+      "y": 620,
+      "w": 360,
+      "fill": "red",
+      "size": "s",
+      "text": "三处冲突：按 ChatGPT 建议执行，待用户确认\n\n1. 原“取用义项”改为“分析义项”。\n2. 人元司令、《滴天髓》版本：等 Muse 核查，界面只留“版本待核实”空状态。\n3. 首页不放全局“正式”；历史页的正式记录移入“状态示例”区。"
+    }
+  }
+}
