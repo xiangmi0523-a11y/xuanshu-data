@@ -1,6 +1,2 @@
-*.csv  text eol=lf
-*.py   text eol=lf
-*.md   text eol=lf
-*.toml text eol=lf
-*.txt  text eol=lf
-*.bsp  binary
+# 所有文件按字节原样保存，不做换行符转换——清单里的 sha256 依赖原始字节
+* -text
