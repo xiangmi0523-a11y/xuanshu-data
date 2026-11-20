@@ -19,14 +19,14 @@
 [[file]]
 path = "contract/玄枢数据契约_v1.0.md"
 status = "formal"
-sha256 = "2ccfe30804dd89b2d0982f38992130cebe00defcdb745e1565a7f9474d30effe"
-note = "契约正文 v1.0（含 B4-1～B4-25）；PDF 由此导出，不入库"
+sha256 = "e6eddb4f3eab169cc1f76dac1e7972253545b1b5150e6a330d31241dd7a72dac"
+note = "契约正文 v1.0（含 B4-1～B4-26）；PDF 由此导出，不入库"
 
 [[file]]
 path = "contract/玄枢_v0.1.2_修订配套清单.md"
 status = "formal"
-sha256 = "3f1b79aca5f9a1fb71517ffa9bde027cbde2206b83b7bf725ebb895884ea8f9e"
-note = "配套清单，至 §8.21"
+sha256 = "d471b68dc3113df9fba6e5b5efcbd3c50426a8498a95a543a22a458ec41f775a"
+note = "配套清单，至 §8.22"
 
 [[file]]
 path = "contract/README.md"
@@ -126,7 +126,7 @@ sha256 = "9175f1d5f1c25f78592bdb963c8cf4f04c1f3a33ec794ddcccbb7ea900e73edb"
 path = "almanac/紫金山天文台_1900-2025年日历.pdf"
 status = "source"
 sha256 = "dc7ed4cb5dae55c1de5a0bdc97f09256a7d6b6d7fe3c553a542e9f9f7758aba4"
-note = "380 页；出处 https://pmo.cas.cn/xwdt2019/kpdt2019/202203/P020250414456381274062.pdf【B4-20】，内容与官网一致、字节未比对；使用条款发布前必须核实【B4-24】，只在本私有仓库比对"
+note = "380 页；出处 https://pmo.cas.cn/xwdt2019/kpdt2019/202203/P020250414456381274062.pdf【B4-20】，内容与官网一致、字节未比对；使用条款已核实【B4-26】：App 不发行其内容，只在本私有仓库比对"
 
 [[file]]
 path = "almanac/2007年中国天文年历_前30页预览.pdf"
@@ -192,4 +192,4 @@ note = "用户 2026-11-20 网页上传；内含 README.txt（e8c36ead）与两�
 path = "research/B4-24_使用条款核实报告_Muse_2026-11-20.pdf"
 status = "source"
 sha256 = "3b14f6acf0fc2ebfd90249d89d719bcb0c7c0b8bb3c7e33f0b9feff4b0f7fc05"
-note = "Muse 对 B4-24 三项（JPL 星历、紫金山日历、Skyfield 闰秒表与 ΔT）的使用条款核实报告；结论待用户确认后写入契约"
+note = "Muse 对 B4-24 三项的使用条款核实报告；结论已按【B4-26】写入契约"
