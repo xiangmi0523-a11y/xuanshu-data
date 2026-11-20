@@ -1,0 +1,74 @@
+# 玄枢数据正本清单
+#
+# 规则：仓库里每一个数据文件、生成脚本都必须登记在这里；
+#       checks/verify.py 逐条核对 sha256 与行数，对不上 CI 就变红。
+#       改文件 = 同一次提交里改这里的 sha256，并写明依据（裁决号）。
+#
+# status:
+#   formal   正式文件，必须在仓库里，哈希必须一致
+#   recheck  独立复算件，用于交叉核对，不作为正式依据
+#   source   原始资料（星历、年历抄取结果等）
+#   pending  已登记、文件尚未放进仓库；放进来后按登记的 sha256 核对
+#
+# rows = 不含表头的数据行数
+
+[[file]]
+path = "ephemeris/de440s.bsp"
+status = "source"
+sha256 = "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2"
+md5 = "3917ee56769db332790c751e2168843d"
+bytes = 32726016
+note = "JPL DE440s 星历，覆盖 1849-12-26 ~ 2150-01-22"
+
+[[file]]
+path = "jieqi/jieqi_1900_2100_utc_skyfield.csv"
+status = "formal"
+sha256 = "69a3215524381f96b212bc682416a3da47d9de4f286fa4ef14ce9ed03ee616e4"
+rows = 4824
+generator = "jieqi/gen_jieqi_skyfield.py"
+regen_cmd = "python3 jieqi/gen_jieqi_skyfield.py ephemeris/de440s.bsp {out}"
+note = "B4 节气基准；Skyfield 1.55；钟表时间口径【B4-12】"
+
+[[file]]
+path = "jieqi/gen_jieqi_skyfield.py"
+status = "formal"
+sha256 = "81fc940262055ebc16c317d24e86d23abeb76f1716ad472fc258d878d215720b"
+
+[[file]]
+path = "b4-data/day_pillars_1900_2100.csv"
+status = "pending"
+sha256 = "374922ef04e105f61fc7fd5e16966b6ae4584d39bf1f1abe39d0b38dc0fc3d89"
+rows = 73414
+generator = "b4-data/gen_day_pillars.py"
+note = "B4 日柱正式文件，契约已登记；待从项目文件 xuanshu/b4-data/ 放入"
+
+[[file]]
+path = "b4-data/gen_day_pillars.py"
+status = "pending"
+note = "正式日柱的生成脚本；哈希待放入时登记"
+
+[[file]]
+path = "b4-data/recheck/day_pillars_1900_2100.csv"
+status = "recheck"
+sha256 = "14ce2171f5a101cc2fdd5343cabb17fe5a4694228952430e0fda3e9d33e5c747"
+rows = 73414
+generator = "b4-data/recheck/gen_day_pillars.py"
+regen_cmd = "python3 b4-data/recheck/gen_day_pillars.py {out}"
+note = "另一套独立脚本复算；与正式文件逐日相同（用户 2026-11-20 核过），列多一列 sexagenary_index"
+
+[[file]]
+path = "b4-data/recheck/gen_day_pillars.py"
+status = "recheck"
+sha256 = "9175f1d5f1c25f78592bdb963c8cf4f04c1f3a33ec794ddcccbb7ea900e73edb"
+
+[[file]]
+path = "almanac/zjs_terms_1900_2025_extracted.csv"
+status = "pending"
+sha256 = "ee87a53d774b874f6fac29d1b01fcdad7f1f6e16d19fb1e4f16d1a20b9ddedee"
+note = "紫金山《1900—2025 年日历》节气机器抄取结果；放入后补比对器（列格式待定）"
+
+[[file]]
+path = "almanac/zjs_vs_skyfield_diff.txt"
+status = "source"
+sha256 = "e3ddc53bc0c7b30dd6ab00e7366605b83e64579d02f57335056a136316cf34ee"
+note = "紫金山日历 vs 基准表差异清单（3002 同、22 条差 1 分、2 条舍入跨日）"

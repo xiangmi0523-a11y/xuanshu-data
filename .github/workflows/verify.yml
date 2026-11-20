@@ -1,0 +1,19 @@
+name: 核对数据
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 安装 Skyfield（MIT）
+        run: pip install "skyfield==1.55" numpy
+      - name: 核对 + 重跑复现
+        run: python3 checks/verify.py --regen
