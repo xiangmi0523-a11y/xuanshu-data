@@ -354,7 +354,7 @@ sha256 = "b45ad8a9af59cc5c3cdeeb13ad91ff574859ae2433b68a3a1f5d520e4bf443f7"
 note = "G-2 答案封存（不外发）；sha256 记入引擎 reports/E2A1_系统审查，结果回来后据此比对"
 
 [[file]]
-path = "crosscheck/muse/M-3_查证任务书_草稿.md"
+path = "crosscheck/muse/M-3_查证任务书.md"
 status = "formal"
-sha256 = "ce54556180d238b3b3dbac6907162fb812eb9ba19179232e90369ee445c28389"
-note = "M-3 查证任务草稿（U-1～U-4），待用户决定是否下发"
+sha256 = "a41d35fec99f8e0b744192a554e6c277bcef5e3c6ca6a3b58d845edcd8e9b573"
+note = "M-3 查证任务（U-1～U-4），用户 2026-11-21 决定下发"
