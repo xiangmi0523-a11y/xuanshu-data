@@ -18,14 +18,14 @@
 [[file]]
 path = "contract/玄枢数据契约_v1.0.md"
 status = "formal"
-sha256 = "6e4f764f6b3c425217b27db85f2b45011b1877577d2d7236fe9bcb771eb36559"
-note = "契约正文 v1.0（含 B4-1～B4-19）；PDF 由此导出，不入库"
+sha256 = "bcac053981001f7e2fa7ed29a2604882c6a10102b78b1f2e4506d239dc4766dd"
+note = "契约正文 v1.0（含 B4-1～B4-21）；PDF 由此导出，不入库"
 
 [[file]]
 path = "contract/玄枢_v0.1.2_修订配套清单.md"
 status = "formal"
-sha256 = "00791cd2063e4d42ed5d553b132269edc169ce68219924f1b663332b3b5dac4d"
-note = "配套清单，至 §8.18"
+sha256 = "3b83be2d50873ab82a53a4c9b22be5980054a1313c69964b80e36d1bdd11bfb9"
+note = "配套清单，至 §8.19"
 
 [[file]]
 path = "contract/README.md"
@@ -125,7 +125,7 @@ sha256 = "9175f1d5f1c25f78592bdb963c8cf4f04c1f3a33ec794ddcccbb7ea900e73edb"
 path = "almanac/紫金山天文台_1900-2025年日历.pdf"
 status = "source"
 sha256 = "dc7ed4cb5dae55c1de5a0bdc97f09256a7d6b6d7fe3c553a542e9f9f7758aba4"
-note = "380 页；出处与使用条款【待核】"
+note = "380 页；出处 pmo.cas.cn 科普动态 2022-03 文章附件【B4-20】；使用条款【待核】，只在本私有仓库比对，不公开再分发"
 
 [[file]]
 path = "almanac/2007年中国天文年历_前30页预览.pdf"
