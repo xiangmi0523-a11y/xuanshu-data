@@ -676,3 +676,15 @@ path = "crosscheck/muse/M-6_P-B-07月破定例刊本直读报告.pdf"
 status = "source"
 sha256 = "87b63a18fe51d738553963ef1ad2227f8ea8d545e5836c13633423ca03b3815a"
 note = "Muse 任务二：《卜筮正宗》乾隆五十二年刊本“月破定例”直读——E-B13 重估为已证实/A，P-B-07 T0 不需重审；只查证不裁决（2026-11-21，用户上传）"
+
+[[file]]
+path = "crosscheck/muse/M-5_Q-7_evidence_role核查报告_正文.txt"
+status = "source"
+sha256 = "2ec0f830f0ab51b26250d9c91cd04656d5fe9de16f2cc3fa7f4dc658f58c236d"
+note = "Muse M-5 报告 PDF 的正文文本（pdftotext -layout 机器提取，供审查阅读；以 PDF 原件为准）"
+
+[[file]]
+path = "crosscheck/muse/M-6_P-B-07月破定例刊本直读报告_正文.txt"
+status = "source"
+sha256 = "bdbf2e3224c4fc052acf8fda02cbf9edc6fa12b1e2ef20e768b5215ea81363ae"
+note = "Muse M-6 报告 PDF 的正文文本（pdftotext -layout 机器提取，供审查阅读；以 PDF 原件为准）"
