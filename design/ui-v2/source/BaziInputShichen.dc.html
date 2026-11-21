@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>八字 · 新建出生资料 · 只知时辰</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F4A68;text-decoration:none}a:hover{color:#1E3550}
+input{font:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 1385px; background: #F3EEE6; font-family: 'Noto Sans SC', sans-serif; color: #1E2833; display: flex; flex-direction: column; overflow: hidden">
+
+  <header style="position: relative; padding: 54px 16px 14px; display: flex; align-items: center; gap: 8px">
+    <svg aria-hidden="true" width="390" height="110" viewBox="0 0 390 110" style="position: absolute; left: 0; top: 0"><path d="M0 92 C50 70 90 62 130 78 C170 52 214 48 250 70 C290 54 340 60 390 76 L390 110 L0 110Z" fill="#8C99A8" opacity="0.18"></path></svg>
+    <a href="Main.dc.html" aria-label="返回首页" style="position: relative; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E2833" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <h1 style="position: relative; margin: 0; flex: 1; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 20px; letter-spacing: 2px">新建出生资料</h1>
+    <span style="position: relative; font-size: 12px; color: #4F5966">带 * 为必填</span>
+  </header>
+
+  <main style="display: flex; flex-direction: column; gap: 14px; padding: 4px 20px 0">
+
+    <section style="background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="nm2" style="font-size: 13px; color: #4F5966">资料名称</label>
+        <input id="nm2" placeholder="例如：本人、某某" style="height: 44px; box-sizing: border-box; padding: 0 12px; border: 1px solid #DCD0BE; border-radius: 12px; background: #FFFDF9; color: #1E2833; font-size: 16px">
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 13px; color: #4F5966">性别 *</span>
+        <div role="group" aria-label="性别" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 4px; background: #EDE6DA; border-radius: 12px">
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 15px">男</button>
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 15px">女</button>
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 15px">未知</button>
+        </div>
+        <span style="font-size: 12px; color: #8E2F22">尚未选择：三项都不预选，请主动选择一项。</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 13px; color: #4F5966">时间精度 *</span>
+        <div role="group" aria-label="时间精度" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 4px; background: #EDE6DA; border-radius: 12px">
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 13px">精确到分钟</button>
+          <button type="button" aria-pressed="true" style="height: 40px; border: none; border-radius: 9px; background: #2F4A68; color: #FBF8F2; font: inherit; font-size: 13px; font-weight: 700">只知时辰</button>
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 13px">不知道时辰</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="dt2" style="font-size: 13px; color: #4F5966">出生日期 *</label>
+        <input id="dt2" value="2017年2月4日" style="height: 44px; box-sizing: border-box; padding: 0 12px; border: 1px solid #DCD0BE; border-radius: 12px; background: #FFFDF9; color: #1E2833; font-size: 15px">
+      </div>
+      <fieldset style="margin: 0; padding: 0; border: none; display: flex; flex-direction: column; gap: 8px">
+        <legend style="font-size: 13px; color: #4F5966; padding-bottom: 8px">出生时辰 *（不需要具体几点几分）</legend>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
+          <button type="button" aria-pressed="true" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 2px solid #2F4A68; border-radius: 10px; background: #2F4A68; color: #FBF8F2; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">子</span><span style="font-size: 10px">23–01 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">丑</span><span style="font-size: 10px; color: #4F5966">01–03 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">寅</span><span style="font-size: 10px; color: #4F5966">03–05 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">卯</span><span style="font-size: 10px; color: #4F5966">05–07 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">辰</span><span style="font-size: 10px; color: #4F5966">07–09 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">巳</span><span style="font-size: 10px; color: #4F5966">09–11 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">午</span><span style="font-size: 10px; color: #4F5966">11–13 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">未</span><span style="font-size: 10px; color: #4F5966">13–15 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">申</span><span style="font-size: 10px; color: #4F5966">15–17 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">酉</span><span style="font-size: 10px; color: #4F5966">17–19 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">戌</span><span style="font-size: 10px; color: #4F5966">19–21 点</span></button>
+          <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 52px; border: 1px solid #DCD0BE; border-radius: 10px; background: #FFFDF9; color: #1E2833; font: inherit"><span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 16px">亥</span><span style="font-size: 10px; color: #4F5966">21–23 点</span></button>
+        </div>
+        <span style="font-size: 12px; line-height: 1.6; color: #5E6874">子时跨两天：前一日 23 点到当日 1 点。日柱可能出现前一日 / 当日两个候选，排盘后由你确认。</span>
+      </fieldset>
+    </section>
+
+    <section style="background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 13px; color: #4F5966">出生地点 *</span>
+      <button type="button" style="height: 48px; border-radius: 12px; border: 1px dashed #C9BBA6; background: #FFFDF9; color: #2F4A68; font: inherit; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 6px">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F4A68" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>选择出生地点
+      </button>
+      <span style="font-size: 12px; color: #5E6874">选定后自动解析时区；需要确认时会在这里提示。</span>
+      <span style="font-size: 12px; line-height: 1.6; color: #6E2218; background: #F5E1DB; border-radius: 10px; padding: 8px 10px">只知时辰时，如出生地时区与北京时间（UTC+8）相差的不是 2 小时的整数倍（例如 1986–1991 年夏令时期间为 UTC+9），所选时辰换到北京时间后会横跨两个时辰，时柱无法唯一确定，排盘会被阻断。请改选“精确到分钟”，填写出生证明上的时间。</span>
+    </section>
+
+    <section style="background: #FBF8F2; border: 1px solid #DDAEA4; border-radius: 18px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <span style="display: flex; flex-direction: column; flex: 1; gap: 2px"><span style="font-size: 15px; font-weight: 500">真太阳时</span><span style="font-size: 12px; color: #5E6874">默认开启</span></span>
+        <button type="button" role="switch" aria-checked="true" aria-label="真太阳时" style="width: 52px; height: 32px; border: none; border-radius: 16px; background: #2F4A68; position: relative; flex-shrink: 0"><span style="position: absolute; top: 3px; right: 3px; width: 26px; height: 26px; border-radius: 13px; background: #FBF8F2"></span></button>
+      </div>
+      <span style="font-size: 12px; line-height: 1.6; color: #6E2218; background: #F5E1DB; border-radius: 10px; padding: 8px 10px">只知时辰时，按真太阳时排盘本版尚未实现，会被阻断。不会替你自动改基准；如要现在排盘，请手动关闭，结果页将标注“使用钟表时间”。</span>
+    </section>
+
+    <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 4px">
+      <button type="button" disabled style="height: 52px; border-radius: 26px; border: none; background: #C9C3B8; color: #4A4F57; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 17px; letter-spacing: 6px">排盘</button>
+      <span style="font-size: 12px; color: #8E2F22; text-align: center">还需：选择性别、选择出生地点；或关闭真太阳时</span>
+      <button type="button" style="height: 48px; border-radius: 24px; border: 1px solid #C9BBA6; background: transparent; color: #2F4A68; font: inherit; font-size: 15px">存为未完成草稿</button>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1385}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

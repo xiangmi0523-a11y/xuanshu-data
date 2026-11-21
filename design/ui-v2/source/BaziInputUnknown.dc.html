@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>八字 · 出生资料 · 不知道时辰</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F4A68;text-decoration:none}a:hover{color:#1E3550}
+input{font:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 920px; background: #F3EEE6; font-family: 'Noto Sans SC', sans-serif; color: #1E2833; display: flex; flex-direction: column; overflow: hidden">
+
+  <header style="position: relative; padding: 54px 16px 14px; display: flex; align-items: center; gap: 8px">
+    <svg aria-hidden="true" width="390" height="110" viewBox="0 0 390 110" style="position: absolute; left: 0; top: 0"><path d="M0 92 C50 70 90 62 130 78 C170 52 214 48 250 70 C290 54 340 60 390 76 L390 110 L0 110Z" fill="#8C99A8" opacity="0.18"></path></svg>
+    <a href="Main.dc.html" aria-label="返回首页" style="position: relative; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E2833" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <h1 style="position: relative; margin: 0; flex: 1; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 20px; letter-spacing: 2px">出生资料</h1>
+    <span style="position: relative; font-size: 12px; color: #4F5966">带 * 为必填</span>
+  </header>
+
+  <main style="display: flex; flex-direction: column; gap: 14px; padding: 4px 20px 0">
+    <section style="background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="nm3" style="font-size: 13px; color: #4F5966">资料名称</label>
+        <input id="nm3" value="示例丙" style="height: 44px; box-sizing: border-box; padding: 0 12px; border: 1px solid #DCD0BE; border-radius: 12px; background: #FFFDF9; color: #1E2833; font-size: 16px">
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 13px; color: #4F5966">性别 *</span>
+        <div role="group" aria-label="性别" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 4px; background: #EDE6DA; border-radius: 12px">
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 15px">男</button>
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 15px">女</button>
+          <button type="button" aria-pressed="true" style="height: 40px; border: none; border-radius: 9px; background: #2F4A68; color: #FBF8F2; font: inherit; font-size: 15px; font-weight: 700">未知</button>
+        </div>
+        <span style="font-size: 12px; color: #5E6874">你选择了“未知”：可以排盘，但不显示大运。</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 13px; color: #4F5966">时间精度 *</span>
+        <div role="group" aria-label="时间精度" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 4px; background: #EDE6DA; border-radius: 12px">
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 13px">精确到分钟</button>
+          <button type="button" aria-pressed="false" style="height: 40px; border: none; border-radius: 9px; background: transparent; color: #1E2833; font: inherit; font-size: 13px">只知时辰</button>
+          <button type="button" aria-pressed="true" style="height: 40px; border: none; border-radius: 9px; background: #2F4A68; color: #FBF8F2; font: inherit; font-size: 13px; font-weight: 700">不知道时辰</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="dt3" style="font-size: 13px; color: #4F5966">出生日期 *</label>
+        <input id="dt3" value="1996年11月3日" style="height: 44px; box-sizing: border-box; padding: 0 12px; border: 1px solid #DCD0BE; border-radius: 12px; background: #FFFDF9; color: #1E2833; font-size: 15px">
+      </div>
+      <div style="display: flex; gap: 10px; padding: 12px; background: #F2E5CF; border-radius: 12px">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A4E14" stroke-width="2" stroke-linecap="round" style="flex-shrink: 0; margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg>
+        <span style="font-size: 13px; line-height: 1.65; color: #3B2A10">不填写出生时间，也不会替你填任何默认时间。将按三柱排盘：年、月、日三柱，时柱留空；日柱按登记日期，不做真太阳时切日。</span>
+      </div>
+    </section>
+
+    <section style="background: #FBF8F2; border: 1px solid #E4DACB; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+      <div style="display: flex; align-items: center; justify-content: space-between">
+        <span style="font-size: 13px; color: #4F5966">出生地点 *</span>
+        <button type="button" style="height: 32px; padding: 0 12px; border: 1px solid #C9BBA6; border-radius: 16px; background: transparent; color: #2F4A68; font: inherit; font-size: 13px">更改</button>
+      </div>
+      <span style="font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 17px">广东省广州市 · 越秀区</span>
+      <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #3F4955"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#24573F" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l4.5 4.5L19 7"></path></svg>时区已解析：Asia/Shanghai（UTC+8）</span>
+    </section>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 4px">
+      <a href="ResultDegraded.dc.html" style="height: 52px; border-radius: 26px; background: #2F4A68; color: #FBF8F2; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 17px; letter-spacing: 6px">排盘</a>
+      <button type="button" style="height: 48px; border-radius: 24px; border: 1px solid #C9BBA6; background: transparent; color: #2F4A68; font: inherit; font-size: 15px">存为未完成草稿</button>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":920}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

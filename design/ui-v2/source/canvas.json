@@ -1,0 +1,229 @@
+{
+  "v": 3,
+  "attachments": {},
+  "createdOnFiles": {
+    "at": "2026-11-20T12:10:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "n1",
+    "n2"
+  ],
+  "pages": [],
+  "title": "玄枢 · 方案一 东方雅致 · UI-2",
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "01 首页",
+      "radius": 44
+    },
+    "BaziInput.dc.html": {
+      "x": 470,
+      "y": 0,
+      "w": 390,
+      "h": 1380,
+      "title": "02a 出生资料 · 已填写示例",
+      "radius": 44
+    },
+    "Settings.dc.html": {
+      "x": 1880,
+      "y": 0,
+      "w": 390,
+      "h": 1170,
+      "title": "07 参数设置",
+      "radius": 44
+    },
+    "About.dc.html": {
+      "x": 2350,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "12 关于 / 致谢",
+      "radius": 44
+    },
+    "ResultNormal.dc.html": {
+      "x": 0,
+      "y": 1760,
+      "w": 390,
+      "h": 1789,
+      "title": "03 八字结果 · 正常完整",
+      "radius": 44
+    },
+    "ResultAmbiguous.dc.html": {
+      "x": 470,
+      "y": 1760,
+      "w": 390,
+      "h": 1580,
+      "title": "04 八字结果 · 歧义候选",
+      "radius": 44
+    },
+    "ResultDegraded.dc.html": {
+      "x": 940,
+      "y": 1760,
+      "w": 390,
+      "h": 1080,
+      "title": "05 八字结果 · 降级",
+      "radius": 44
+    },
+    "ResultBlocked.dc.html": {
+      "x": 1410,
+      "y": 1760,
+      "w": 390,
+      "h": 930,
+      "title": "06 八字结果 · 阻断",
+      "radius": 44
+    },
+    "Liuyao.dc.html": {
+      "x": 0,
+      "y": 3900,
+      "w": 390,
+      "h": 1635,
+      "title": "08 六爻 · 起卦与装卦",
+      "radius": 44
+    },
+    "GujiSearch.dc.html": {
+      "x": 470,
+      "y": 3900,
+      "w": 390,
+      "h": 960,
+      "title": "09a 古籍检索结果",
+      "radius": 44
+    },
+    "GujiText.dc.html": {
+      "x": 940,
+      "y": 3900,
+      "w": 390,
+      "h": 890,
+      "title": "09b 古籍原文",
+      "radius": 44
+    },
+    "History.dc.html": {
+      "x": 1410,
+      "y": 3900,
+      "w": 390,
+      "h": 1460,
+      "title": "10 历史记录 / 快照",
+      "radius": 44
+    },
+    "DeleteProfile.dc.html": {
+      "x": 1880,
+      "y": 3900,
+      "w": 390,
+      "h": 870,
+      "title": "11 删除个人资料",
+      "radius": 44
+    },
+    "States.dc.html": {
+      "x": 0,
+      "y": 6140,
+      "w": 880,
+      "h": 1410,
+      "title": "状态组件清单",
+      "radius": 16
+    },
+    "BaziInputShichen.dc.html": {
+      "x": 940,
+      "y": 0,
+      "w": 390,
+      "h": 1385,
+      "title": "02b 新建出生资料 · 只知时辰",
+      "radius": 44
+    },
+    "BaziInputUnknown.dc.html": {
+      "x": 1410,
+      "y": 0,
+      "w": 390,
+      "h": 920,
+      "title": "02c 出生资料 · 不知道时辰",
+      "radius": 44
+    },
+    "LiuyaoSource.dc.html": {
+      "x": 2350,
+      "y": 3900,
+      "w": 390,
+      "h": 1273,
+      "title": "08b 六爻 · 出处与证据",
+      "radius": 44
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "BaziInput.dc.html",
+    "BaziInputShichen.dc.html",
+    "BaziInputUnknown.dc.html",
+    "Settings.dc.html",
+    "About.dc.html",
+    "ResultNormal.dc.html",
+    "ResultAmbiguous.dc.html",
+    "ResultDegraded.dc.html",
+    "ResultBlocked.dc.html",
+    "Liuyao.dc.html",
+    "LiuyaoSource.dc.html",
+    "GujiSearch.dc.html",
+    "GujiText.dc.html",
+    "History.dc.html",
+    "DeleteProfile.dc.html",
+    "States.dc.html"
+  ],
+  "notes": {
+    "t1": {
+      "x": 0,
+      "y": -260,
+      "text": "主流程 · 入口与设置",
+      "kind": "title1",
+      "maxW": 2740,
+      "w": 240
+    },
+    "t2": {
+      "x": 0,
+      "y": 1500,
+      "text": "八字结果 · 四种状态",
+      "kind": "title1",
+      "maxW": 1800,
+      "w": 240
+    },
+    "t3": {
+      "x": 0,
+      "y": 3640,
+      "text": "六爻 · 古籍 · 历史 · 删除",
+      "kind": "title1",
+      "maxW": 2270,
+      "w": 240
+    },
+    "t4": {
+      "x": 0,
+      "y": 5880,
+      "text": "状态组件清单",
+      "kind": "title1",
+      "maxW": 880,
+      "w": 240
+    },
+    "n1": {
+      "x": 2820,
+      "y": 0,
+      "w": 360,
+      "fill": "orange",
+      "size": "s",
+      "text": "设计说明（方案一 · 东方雅致 · UI-2）\n\n· 在 UI-1 定稿基础上只改与新裁决相关的页面，视觉方向不变。\n· 装卦开放（M1-R、M2-R 准入，E2-A 第 1 项已验收）：08 页显示八宫、世应、纳甲、六亲、六神、旬空；数值由引擎实算。\n· 变卦不显示六神与世应（M3-R、R-39.12）；08b 出处详情写依据与特殊标注（H13、H19、H31）。\n· 03 页补“统一按北京时间排盘”说明（PD-1）、日主十二长生，藏干标“现代整理”。\n· 02b 补“时区差不是 2 小时整数倍时阻断”提示（E1-1）。"
+    },
+    "n2": {
+      "x": 2820,
+      "y": 620,
+      "w": 360,
+      "fill": "red",
+      "size": "s",
+      "text": "UI-2 依据\n\n1. M3-R：变卦不排六神、不标世应；藏干次序为现代整理。\n2. R-39.12：变卦不标世应证据升为已证实。\n3. E2-A1-C：H13 写“原文作‘六位居世’（两刊本同）；世五应二依安世应诀推定”；H19、H31 写应爻证据尚待补强。\n4. PD-1：结果页统一按北京时间排盘说明。\n5. E1-1：只知时辰跨两个时辰即阻断。\n\n未改：人元司令、《滴天髓》仍未选版本、不显示；大运仍暂不显示。"
+    }
+  }
+}
