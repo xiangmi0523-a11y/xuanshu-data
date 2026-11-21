@@ -544,3 +544,15 @@ path = "design/ui-v2/source/canvas.json"
 status = "draft"
 sha256 = "3c6b3c08ac0e254af5e42075acda5f18e927f268e3e5928feaac70e2a19e2438"
 note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/compare_ui1.py"
+status = "formal"
+sha256 = "c70b5ec2f9c02270b6cf0ff56ec45285a21b5fcacf5b4ffbba5f653a80d5fee0"
+note = "UI-2 与 UI-1 设计源文件逐字比对脚本（只读）"
+
+[[file]]
+path = "design/ui-v2/UI-2_与UI-1源文件比对.md"
+status = "formal"
+sha256 = "aa1735970a8248f77e8196e60a727cace5fe9c794500e4e2dc9e5b54d61b38e0"
+note = "比对结果：12 页逐字相同，5 个文件有改动，1 页新增"
