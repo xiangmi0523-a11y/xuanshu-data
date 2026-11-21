@@ -19,8 +19,8 @@
 [[file]]
 path = "contract/玄枢数据契约_v1.0.md"
 status = "formal"
-sha256 = "c42705b35d58afba6e369f9ae84e02c022cab0eaf762205ad5826795263e69d4"
-note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1、UI-1、E1-1、E1-2、PD-1、E1-C、M1-R、M2-R、E2-A）；PDF 由此导出，不入库"
+sha256 = "f2bbd1dc53517ebcb665b7f2eb399ae390f1ea9589088120736fa78d8a9646cd"
+note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1、UI-1、E1-1、E1-2、PD-1、E1-C、M1-R、M2-R、E2-A、M3-R）；PDF 由此导出，不入库"
 
 [[file]]
 path = "contract/玄枢_v0.1.2_修订配套清单.md"
@@ -308,7 +308,7 @@ note = "Muse 查证交回原件，静态表的唯一输入"
 [[file]]
 path = "static/PROVENANCE.md"
 status = "formal"
-sha256 = "557f1d99e34474b5700654dbbd9eac5ecf872af2a0280bde02a24b53210c730d"
+sha256 = "e411c3a13b62a7a29125af7c6160ff6add2ea5d5b4f508b09a071447ae831c0d"
 note = "静态表来源与准入记录正本（E2-A 第 1 项全系统审查）：规则、裁决、来源定位、补强标记、待研究事项"
 
 [[file]]
@@ -398,5 +398,11 @@ note = "M-3 Claude 核对记录"
 [[file]]
 path = "review/M-3_G-2_待裁决清单.md"
 status = "formal"
-sha256 = "ff280fee6bdafa0e35746602b49d2f4bcb4ca8540279389114b9a6727855f4d6"
+sha256 = "b9e44d4645e94689b614e4fe378091267d19ddcbe16d407b8dc06558aac3ad23"
 note = "M-3 与 G-2 之后的待裁决清单 U-1～U-5"
+
+[[file]]
+path = "crosscheck/muse/M-3b_补充任务书.md"
+status = "formal"
+sha256 = "3bfbe73e0cecc1e5c2a8dc8714b56eacbbe210b60f02e4baeea23943ecaebcd7"
+note = "M-3b 补充任务：古吴版扫描本复核 W03、W04；补交 M-3-已填.md（M3-R 附项）"
