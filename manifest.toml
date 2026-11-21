@@ -572,11 +572,23 @@ note = "E2-A 第 1 项关闭记录：验收与合并、合并后核对、5 处�
 [[file]]
 path = "review/E2_结构与约束审核清单.md"
 status = "draft"
-sha256 = "a4ef95a878db541bb4f21dd4f77ad3bef811eaa6774ae07ee87cf84cce599257"
-note = "E2 数据库结构准备：结构与约束审核清单（待用户与 ChatGPT 审核；审核前不写代码）"
+sha256 = "d0b375bb9f55cd0711991ceed5a7145f9aebd2051f8f289290297ff983fb4447"
+note = "E2 数据库结构准备：结构与约束审核清单第 2 版（吸收 ChatGPT 第一轮意见；待重新审核，审核前不写代码）"
 
 [[file]]
 path = "crosscheck/muse/M-4_六爻日界与月建_查证任务书.md"
 status = "draft"
-sha256 = "aac9e8099582b49c67b57719bbc3ea56b8e69da762dca2d1c1d6f9930d9e465f"
+sha256 = "24f47505b50265c4c35ddc5cbaeb71bd113cfcae9f7f69aeea3eb27ce2de9175"
 note = "Muse 查证任务 M-4：六爻起卦日界与月建取法（E2 审核清单第 7 节）"
+
+[[file]]
+path = "review/E2_GPT第一轮结构审核意见_原文.txt"
+status = "source"
+sha256 = "f2927d5975b294613f76e3fd9ee19f6520f34b5b796f4e340e752733b38697ec"
+note = "ChatGPT 对 E2 结构与约束清单的第一轮审核意见原文（用户转来）"
+
+[[file]]
+path = "review/E2_结构与约束审核清单_第一轮修订对照表.md"
+status = "draft"
+sha256 = "688e242d0b703cd2401dc63e05cf30760e42567b88d838d3d571af075eaa5895"
+note = "E2 审核清单第一轮修订对照表：逐项落实、待用户裁决与 Muse 项"
