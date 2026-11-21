@@ -568,3 +568,81 @@ path = "review/E2-A1_关闭记录.md"
 status = "formal"
 sha256 = "96170f3508dee56cb76fb95376908efa9efb98f27bfb88ce51fc490f15b951a8"
 note = "E2-A 第 1 项关闭记录：验收与合并、合并后核对、5 处文字勘误、后续顺序与 UI-2 边界、仓库可见性、UI-2 取代 UI-1"
+
+[[file]]
+path = "review/E2_结构与约束审核清单.md"
+status = "draft"
+sha256 = "0c532370e353e41118e8a59d4ec3830a46dad422343e16128310fd3738b36e08"
+note = "E2 数据库结构准备：结构与约束审核清单第 4 版定稿（R1～R4、交审前自查 Z-1～Z-12、最终审核 R1 token 论证定点修订；待最终确认，审核前不写代码）"
+
+[[file]]
+path = "crosscheck/muse/M-4_六爻日界与月建_查证任务书.md"
+status = "draft"
+sha256 = "24f47505b50265c4c35ddc5cbaeb71bd113cfcae9f7f69aeea3eb27ce2de9175"
+note = "Muse 查证任务 M-4：六爻起卦日界与月建取法（E2 审核清单第 7 节）"
+
+[[file]]
+path = "review/E2_GPT第一轮结构审核意见_原文.txt"
+status = "source"
+sha256 = "f2927d5975b294613f76e3fd9ee19f6520f34b5b796f4e340e752733b38697ec"
+note = "ChatGPT 对 E2 结构与约束清单的第一轮审核意见原文（用户转来）"
+
+[[file]]
+path = "review/E2_结构与约束审核清单_第一轮修订对照表.md"
+status = "draft"
+sha256 = "688e242d0b703cd2401dc63e05cf30760e42567b88d838d3d571af075eaa5895"
+note = "E2 审核清单第一轮修订对照表：逐项落实、待用户裁决与 Muse 项"
+
+[[file]]
+path = "review/E2_GPT第二轮审核意见_用户转述.txt"
+status = "source"
+sha256 = "dc8fb3a4e293a90e3053bdf06dd27d2a99633cd3eda77417ca0139da6df0410d"
+note = "ChatGPT 第二轮审核意见（用户转述的修订要求原文）"
+
+[[file]]
+path = "review/E2_结构与约束审核清单_第二轮修订对照表.md"
+status = "draft"
+sha256 = "418adba766ab79743398df17501c68b947eae860f3317220ad217e850cfaff27"
+note = "E2 审核清单第 2 版至第 3 版逐项修订对照表"
+
+[[file]]
+path = "crosscheck/muse/M-4_Muse交回报告.pdf"
+status = "source"
+sha256 = "90b0aedb4cd46f5bc6b223a139af13728b0c3354d2501ab0ebe08d9ab7db57da"
+note = "Muse M-4 交回报告：六爻日界与月建（四部古籍日界未见；月建交节时刻、闰月未见）"
+
+[[file]]
+path = "crosscheck/muse/M-4_Muse已填表.pdf"
+status = "source"
+sha256 = "da2cd5b2ce3ce3eaf826b05a5e2e131aaf21649d476f4b4f531563d2698dea14"
+note = "Muse M-4 已填表（62 行）"
+
+[[file]]
+path = "crosscheck/muse/M-4_Muse补查_白昼换日.pdf"
+status = "source"
+sha256 = "97069de343e2e4dac4c1253159ea3bc6c5bc078954f7aabe34dba9f6bd83170b"
+note = "Muse M-4 补查：四部古籍未见白昼换日之说"
+
+[[file]]
+path = "review/E2_GPT第三轮审核意见_用户转述.txt"
+status = "source"
+sha256 = "ba125171d2385dce8aa34d3b082063d4d96e00114a74bde07bc398b529342ebc"
+note = "ChatGPT 对审核清单第 3 版的最终审核意见 R1～R4（用户转述原文）"
+
+[[file]]
+path = "review/E2_结构与约束审核清单_第三轮修订对照表.md"
+status = "draft"
+sha256 = "7fa1ade2d0c286d4c2cbfef4e886b676aca6c0be31eb03ddbbf1dcf776d9a32f"
+note = "E2 审核清单第 3 版至第 4 版逐项修订对照表（R1～R4；自查 Z-1～Z-12；根因分析；最终审核后 R1 定点修订）"
+
+[[file]]
+path = "review/E2_GPT第四轮审核意见_原文.txt"
+status = "source"
+sha256 = "cd3856caf3f90573d1a091443650198ddecb0eb8b8ee96e1eb6009fc2d6a64dd"
+note = "ChatGPT 对 E2 审核清单第 4 版定稿 37aa686 的最终审核原文（只余 R1 token 论证须纠正）"
+
+[[file]]
+path = "review/E2_GPT最终审核通过_原文.txt"
+status = "source"
+sha256 = "009bfc7514dc02dcdc8b4ff6626af8213240781ac333ec181319459b184ecf8e"
+note = "ChatGPT 最终审核通过 E2 结构与约束审核清单（基线 commit 7388ffa）；Q-1～Q-19 仍待用户裁决；不解除任何阻断"
