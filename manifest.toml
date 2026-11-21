@@ -428,13 +428,13 @@ note = "M-3b Claude 核对记录"
 [[file]]
 path = "design/ui-v2/玄枢_UI-2_方案一_东方雅致_待确认.pdf"
 status = "draft"
-sha256 = "069e17e13a01d6ec71b24795e14b3f1bb0a87d9d5f986634f5a227fcc73d1673"
+sha256 = "65621377c1ad2f221e1a037e884cdfe99bd932f17a1096ef03da8e869bd656fb"
 note = "UI-2 待确认稿（GPT 验收、用户确认后取代 UI-1）"
 
 [[file]]
 path = "design/ui-v2/UI-2_修改对照表.md"
 status = "draft"
-sha256 = "8264702af5b849d4642e8c799a7960dd766fa7b2941055d1a277bb59eac196bc"
+sha256 = "34e57f71db25bbb14d04bd0ed9cf9158f7a9e9102bf085cfc8ca5497e9dced25"
 note = "UI-2 修改对照表与未改事项"
 
 [[file]]
@@ -488,13 +488,13 @@ note = "UI-2 设计源文件"
 [[file]]
 path = "design/ui-v2/source/Liuyao.dc.html"
 status = "draft"
-sha256 = "97ebe99ddfe722297998fe8ada304a0cd9baf4ac431bff2974884ae1fda1d5d8"
+sha256 = "771991a0b174d4e7026a8539e079d0e10d89b5549d889b84020927ba418c4d96"
 note = "UI-2 设计源文件"
 
 [[file]]
 path = "design/ui-v2/source/LiuyaoSource.dc.html"
 status = "draft"
-sha256 = "160c1f113dff71f04a9a05191b6d74a8a030b00092c8dd0b5df71b59746790a8"
+sha256 = "0c99e17bed08ec0b6f6487481b8d669faae74256ec26a96722c7f35ff9d23bf4"
 note = "UI-2 设计源文件"
 
 [[file]]
@@ -542,5 +542,5 @@ note = "UI-2 设计源文件"
 [[file]]
 path = "design/ui-v2/source/canvas.json"
 status = "draft"
-sha256 = "6d78d204cc374df5b8124f1ff32fb564c62bf132a5e4d3b8588daa7516685864"
+sha256 = "3c6b3c08ac0e254af5e42075acda5f18e927f268e3e5928feaac70e2a19e2438"
 note = "UI-2 设计源文件"
