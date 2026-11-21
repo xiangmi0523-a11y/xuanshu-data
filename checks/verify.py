@@ -576,6 +576,30 @@ def check_blockers(c):
     (ok if same else fail)(sec, f"constants.toml [blockers] required = {req}；契约 §9.5 + BLK.1 表行 = {found}")
 
 
+def check_blocker_coverage(c):
+    """[blocker_coverage] 与契约逐项相符（E2-FIX-2 答复第 4 条）"""
+    sec = "阻断覆盖方式"
+    cov = c.get("blocker_coverage", {}); req = c.get("blockers", {}).get("required", [])
+    text = open(p("contract/玄枢数据契约_v1.0.md"), encoding="utf-8").read()
+    probs = []
+    if sorted(cov) != sorted(req): probs.append(f"覆盖表键 {sorted(cov)} 与 required 不同")
+    blk4 = text[text.index("### BLK.4"):text.index("### BLK.5")]
+    if "BLK-6 与 B4、BLK-7 与 B1 各为同一事项" not in blk4: probs.append("BLK.4 未见 B4↔BLK-6、B1↔BLK-7 同一事项")
+    if cov.get("B1") != "pair:BLK-7" or cov.get("B4") != "pair:BLK-6": probs.append("B1 / B4 须为 pair:BLK-7 / pair:BLK-6")
+    sec95 = text[text.index("### 9.5 B1–B4 最小阻断集"):text.index("### 9.6")]
+    for b in ("B2", "B3"):
+        if not re.search(rf"^\| {b} \| GLOBAL \|", sec95, re.M) or not cov.get(b, "").startswith("global:"): probs.append(f"{b} 须为 GLOBAL 且覆盖为 global:*")
+    if "| 南半球出生 | BLK-5 | 输入路径 BLOCKED-HARD" not in text or cov.get("BLK-5") != "input_path:南半球": probs.append("BLK-5 须为 input_path:南半球（§11.1 表）")
+    blk3 = text[text.index("### BLK.3"):text.index("### BLK.4")]
+    for b in ("BLK-1", "BLK-2", "BLK-3", "BLK-4"):
+        row = re.search(rf"^\| {b} \| ([^|]+) \| ([^|]+) \|", blk3, re.M)
+        if not row or not row.group(1).strip().startswith("不锁") or not row.group(2).strip().startswith("不锁") or cov.get(b) != "no_entry":
+            probs.append(f"{b}：BLK.3 八字 / 六爻两栏须为“不锁”且覆盖为 no_entry")
+    for b in ("BLK-6", "BLK-7"):
+        if cov.get(b) != "step_map": probs.append(f"{b} 须为 step_map（BLK.2 PATH 级）")
+    (fail if probs else ok)(sec, "；".join(probs) if probs else f"11 项覆盖方式与契约 §9.5、BLK.3、BLK.4、§11.1 相符：{cov}")
+
+
 SIM_SCAN_DIRS = ["static", "jieqi", "eot", "b4-data", "crosscheck/oracle", "crosscheck/jcs1", "formal"]
 SIM_PAT = re.compile(r"TEST-SIM-|TEST-G[0-9]")
 
@@ -669,6 +693,7 @@ def main():
     check_static_oracle(manifest)
     check_cfg01(consts)
     check_blockers(consts)
+    check_blocker_coverage(consts)
     check_golden_jcs1(manifest)
     check_no_sim_records()
     selftest_no_sim_records()

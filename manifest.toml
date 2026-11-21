@@ -19,7 +19,7 @@
 [[file]]
 path = "contract/玄枢数据契约_v1.0.md"
 status = "formal"
-sha256 = "f9d2105d7030fa0a6b9184e1f09f1b6f50a972de139c04e897c3709b329976cf"
+sha256 = "c105bd15954887ddb5c07f77e818b74b5d91bb737ce4167153d8b6cc20fb8535"
 note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1、UI-1、E1-1、E1-2、PD-1、E1-C、M1-R、M2-R、E2-A、M3-R、R-39.12、E2-A1-C、UI-2；v1.0.6 修订 E2-FIX 在修订分支上，待验收）；PDF 由此导出，不入库"
 
 [[file]]
@@ -44,6 +44,12 @@ path = "contract/history/玄枢数据契约_v1.0.6_修订单.md"
 status = "draft"
 sha256 = "3092734dce6ec83a5fcf0e0fd73b10f1e6423c1e5b01b0b70373bce50f1cc782"
 note = "E2-FIX 定点修订：Q-7 证据—主张模型（§2.3、§2.5、R-I-4、§12.2）与 E-B13 更新记录（R-39.13）；已合入正文，修订分支上待独立审查与 ChatGPT 验收；状态 draft，未获用户批准（E2-FIX-2 P2-4）"
+
+[[file]]
+path = "contract/history/玄枢数据契约_v1.0.7_修订单.md"
+status = "formal"
+sha256 = "b352a7ea03824257eb25df231ab76dc8354486a0e807318e24d9bc39a0185308"
+note = "用户 2026-11-21 答复裁决 E2-FIX-2-R1～R3（已获批准）：证据 FORMAL 须相符的人工核验记录、FORMAL ≠ PRIMARY_VERIFIED；核对人真实性技术边界与发布时审批记录；竞争变体连带阻断为已知限制。已合入正文；修订分支上待独立审查与 ChatGPT 验收"
 
 # ---------------------------------------------------------------- 星历
 [[file]]
@@ -712,3 +718,9 @@ path = "review/E2_FIX2_任务书.md"
 status = "source"
 sha256 = "a9212c44e8b7a3d6dcf8db51fc20ece2e8f06d70337fe221f55c0e79f287f1e5"
 note = "用户 2026-11-21 下达：E2-FIX 第二轮修复任务（P1-1 R-I-4 进判定、P1-2 函数级争议、P1-3 阻断失效关闭、P2-2～P2-5）；原文存档。所引 Claude B 审查报告未随任务交付"
+
+[[file]]
+path = "review/E2_evidence_link版本模型修复方案.md"
+status = "draft"
+sha256 = "e80e495923728828bdce4ac6c21557f641fd722f79c117cc2da73dac3839be0b"
+note = "E2-FIX-2 答复第 4 条第 2 项：evidence_link 缺数据版本的核查结论（不能还原）与最小模型修复方案；待用户批准，未实施"
