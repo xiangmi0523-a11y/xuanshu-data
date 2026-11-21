@@ -19,8 +19,8 @@
 [[file]]
 path = "contract/玄枢数据契约_v1.0.md"
 status = "formal"
-sha256 = "f8971de225894fed18609e0072f33e0504f72bfd108de5f33e215c27f2270312"
-note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1、UI-1、E1-1、E1-2、PD-1、E1-C、M1-R、M2-R、E2-A、M3-R、R-39.12）；PDF 由此导出，不入库"
+sha256 = "ee8e2da7b1c00cc4170e829138ba0b2ab3f8c65ed38fe9025404447baa69bf4f"
+note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1、UI-1、E1-1、E1-2、PD-1、E1-C、M1-R、M2-R、E2-A、M3-R、R-39.12、E2-A1-C、UI-2）；PDF 由此导出，不入库"
 
 [[file]]
 path = "contract/玄枢_v0.1.2_修订配套清单.md"
@@ -556,3 +556,15 @@ path = "design/ui-v2/UI-2_与UI-1源文件比对.md"
 status = "formal"
 sha256 = "aa1735970a8248f77e8196e60a727cace5fe9c794500e4e2dc9e5b54d61b38e0"
 note = "比对结果：12 页逐字相同，5 个文件有改动，1 页新增"
+
+[[file]]
+path = "review/E2-A1_GPT验收结论_原文.txt"
+status = "source"
+sha256 = "9bc710dc51319ffa6eefd029dbb369f30bd0a0ce416a6301719ce6008ca9a846"
+note = "ChatGPT 对 E2-A 第 1 项的最终独立验收原文（通过）"
+
+[[file]]
+path = "review/E2-A1_关闭记录.md"
+status = "formal"
+sha256 = "96170f3508dee56cb76fb95376908efa9efb98f27bfb88ce51fc490f15b951a8"
+note = "E2-A 第 1 项关闭记录：验收与合并、合并后核对、5 处文字勘误、后续顺序与 UI-2 边界、仓库可见性、UI-2 取代 UI-1"
