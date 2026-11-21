@@ -128,3 +128,9 @@ nov_max_minutes = [16.0, 17.0]        # 每年 9–12 月极大值所在区间
 zero_anchors = ["04-15", "06-13", "09-01", "12-25"]
 zero_tolerance_days = 3
 max_interp_error_seconds = 5.0
+
+# CFG-01（zi_rule）第一版锁定值【用户裁决 N-6】：契约 §13.3、P-8.1“第一版锁定 ye_zi_b”。
+# E2 DDL 生成脚本由此读取，写入用户库 CFG-01 的库层拦截（审核清单 §8.1；E2 实施授权书 Q-8）。
+[cfg01]
+locked_value = "ye_zi_b"
+decision = "N-6"

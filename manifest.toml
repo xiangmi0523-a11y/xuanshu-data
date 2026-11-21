@@ -646,3 +646,9 @@ path = "review/E2_GPT最终审核通过_原文.txt"
 status = "source"
 sha256 = "009bfc7514dc02dcdc8b4ff6626af8213240781ac333ec181319459b184ecf8e"
 note = "ChatGPT 最终审核通过 E2 结构与约束审核清单（基线 commit 7388ffa）；Q-1～Q-19 仍待用户裁决；不解除任何阻断"
+
+[[file]]
+path = "review/E2_实施授权书_原文.txt"
+status = "source"
+sha256 = "4e5aa379736285d95d90a759b41e796dff1ff33d678f17049d728d4741912eae"
+note = "用户授权 E2 编码：合并审核分支、Q-1～Q-19 最终裁决、实施范围与隔离要求、验收交付项"

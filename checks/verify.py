@@ -17,6 +17,7 @@ import subprocess
 import sys
 import tempfile
 import tomllib
+import re
 from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta
 
@@ -547,6 +548,59 @@ def check_static_oracle(manifest):
     if not diffs: ok(sec, f"static/*.csv 与独立基准逐格一致：{cells} 格（含藏干集合 12 支；藏干次序无独立来源，不比）")
 
 
+# ------------------------------------------------------------------ E2：CFG-01 锁定值【N-6】与模拟记录隔离【审核清单 DB-G-04】
+def check_cfg01(c):
+    sec = "CFG-01 锁定值"
+    v = c.get("cfg01", {}).get("locked_value")
+    if v not in ("zi_zheng", "zi_chu", "ye_zi_b", "ye_zi_c"):
+        fail(sec, f"constants.toml [cfg01] locked_value = {v!r}，不在 CFG-01 四值之内")
+        return
+    contract = open(p("contract/玄枢数据契约_v1.0.md"), encoding="utf-8").read().replace("\\_", "_")
+    phrase = f"第一版锁定 {v}"
+    found = phrase in contract
+    (ok if found else fail)(sec, f"constants.toml [cfg01] locked_value = {v}；契约正文含“{phrase}”：{'是' if found else '否'}")
+
+
+SIM_SCAN_DIRS = ["static", "jieqi", "eot", "b4-data", "crosscheck/oracle", "crosscheck/jcs1", "formal"]
+SIM_PAT = re.compile(r"TEST-SIM-|TEST-G[0-9]")
+
+
+def check_no_sim_records(scan_root=None):
+    """数据资产目录不得含模拟治理记录（TEST-SIM-、TEST-G*）。review/ 中的审核文档讨论模拟项，不在扫描范围。"""
+    sec = "模拟记录隔离（DB-G-04）"
+    root = scan_root or ROOT
+    hits, n = [], 0
+    for d in SIM_SCAN_DIRS:
+        base = os.path.join(root, d)
+        if not os.path.isdir(base):
+            continue
+        for dp_, _, fs in os.walk(base):
+            for fn in sorted(fs):
+                fp = os.path.join(dp_, fn)
+                n += 1
+                try:
+                    txt = open(fp, encoding="utf-8").read()
+                except (UnicodeDecodeError, OSError):
+                    continue
+                for i, line in enumerate(txt.split("\n"), 1):
+                    if SIM_PAT.search(line):
+                        hits.append(f"{os.path.relpath(fp, root)}:{i}")
+    if scan_root is not None:
+        return hits
+    (ok if not hits else fail)(sec, f"扫描 {n} 个数据资产文件，模拟记录前缀命中 {len(hits)} 处" + (f"：{hits[:5]}" if hits else ""))
+
+
+def selftest_no_sim_records():
+    """DB-G-04 自测：在临时副本中植入一处 TEST-SIM-，扫描必须检出。"""
+    sec = "模拟记录隔离（DB-G-04）"
+    with tempfile.TemporaryDirectory() as t:
+        os.makedirs(os.path.join(t, "static"))
+        with open(os.path.join(t, "static", "planted.csv"), "w", encoding="utf-8") as f:
+            f.write("a,b\nTEST-SIM-X,1\n")
+        hits = check_no_sim_records(t)
+    (ok if hits == ["static/planted.csv:2"] else fail)(sec, f"自测：植入 1 处，检出 {hits}")
+
+
 def main():
     with open(p("manifest.toml"), "rb") as f:
         manifest = tomllib.load(f)
@@ -577,6 +631,9 @@ def main():
     check_eot(consts)
     check_static(manifest)
     check_static_oracle(manifest)
+    check_cfg01(consts)
+    check_no_sim_records()
+    selftest_no_sim_records()
 
     if "--regen" in sys.argv:
         check_regen(manifest)
