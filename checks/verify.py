@@ -600,6 +600,32 @@ def check_blocker_coverage(c):
     (fail if probs else ok)(sec, "；".join(probs) if probs else f"11 项覆盖方式与契约 §9.5、BLK.3、BLK.4、§11.1 相符：{cov}")
 
 
+def check_blocker_maps(c):
+    """[blocker_step_maps]、[blocker_component_links] 与审核清单 §7.2、§3.8 逐项相符（E2-FIX-4 F3-2）"""
+    sec = "必备阻断映射"
+    maps = c.get("blocker_step_maps", {}); links = c.get("blocker_component_links", {}); cov = c.get("blocker_coverage", {})
+    rv = open(p("review/E2_结构与约束审核清单.md"), encoding="utf-8").read()
+    t72 = rv[rv.index("### 7.2 夹具中的阻断—步骤映射"):rv.index("### 7.3")]
+    t38 = rv[rv.index("### 3.8 步骤编号与依赖"):rv.index("### 3.9") if "### 3.9" in rv else rv.index("## 4 建表清单")]
+    step_comp = {m.group(1): m.group(2) for m in re.finditer(r"^\| ((?:BZ|LY)-\d\d) \| [^|]+ \| [^|]+ \| ([^|]+) \|", t38, re.M)}
+    probs = []
+    want_rows = {"BLK-7": "| B1 / BLK-7 |", "BLK-6": "| B4 / BLK-6 |"}
+    for b, row_head in want_rows.items():
+        row = next((l for l in t72.split("\n") if l.startswith(row_head)), "")
+        if not row: probs.append(f"清单 §7.2 缺 {row_head} 行"); continue
+        for item in maps.get(b, []):
+            step, eff = item.split(":")
+            seg = re.search(rf"{step}[^：]*：\s*{eff}", row) or (eff in row and step in row and re.search(rf"{step}.*{eff}", row))
+            if not seg: probs.append(f"{b} {step}:{eff} 不见于清单 §7.2")
+        listed = set(re.findall(r"(?:BZ|LY)-\d\d", row))
+        if listed != {i.split(":")[0] for i in maps.get(b, [])}: probs.append(f"{b} 步骤集合 {sorted(listed)} 与常量不同")
+        want_comp = sorted({re.match(r"P-[A-Z]-\d+(?:-[a-z])?", x.strip()).group(0) for i in maps.get(b, []) for x in re.split(r"[、，]", step_comp.get(i.split(':')[0], "")) if x.strip().startswith("P-")})
+        if sorted(links.get(b, [])) != want_comp: probs.append(f"{b} 子项 {links.get(b)} 与 §3.8 推得 {want_comp} 不同")
+    for b, k in cov.items():
+        if k == "step_map" and b not in maps: probs.append(f"{b} 为 step_map 而无必备映射")
+    (fail if probs else ok)(sec, "；".join(probs) if probs else f"映射 {maps}；子项 {links}（清单 §7.2、§3.8）")
+
+
 SIM_SCAN_DIRS = ["static", "jieqi", "eot", "b4-data", "crosscheck/oracle", "crosscheck/jcs1", "formal"]
 SIM_PAT = re.compile(r"TEST-SIM-|TEST-G[0-9]")
 
@@ -694,6 +720,7 @@ def main():
     check_cfg01(consts)
     check_blockers(consts)
     check_blocker_coverage(consts)
+    check_blocker_maps(consts)
     check_golden_jcs1(manifest)
     check_no_sim_records()
     selftest_no_sim_records()
