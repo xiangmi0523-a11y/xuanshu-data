@@ -19,8 +19,8 @@
 [[file]]
 path = "contract/玄枢数据契约_v1.0.md"
 status = "formal"
-sha256 = "ee8e2da7b1c00cc4170e829138ba0b2ab3f8c65ed38fe9025404447baa69bf4f"
-note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1、UI-1、E1-1、E1-2、PD-1、E1-C、M1-R、M2-R、E2-A、M3-R、R-39.12、E2-A1-C、UI-2）；PDF 由此导出，不入库"
+sha256 = "f9d2105d7030fa0a6b9184e1f09f1b6f50a972de139c04e897c3709b329976cf"
+note = "契约正文 v1.0（含 B4-1～B4-26、B1-1、B3-1、UI-1、E1-1、E1-2、PD-1、E1-C、M1-R、M2-R、E2-A、M3-R、R-39.12、E2-A1-C、UI-2；v1.0.6 修订 E2-FIX 在修订分支上，待验收）；PDF 由此导出，不入库"
 
 [[file]]
 path = "contract/玄枢_v0.1.2_修订配套清单.md"
@@ -38,6 +38,12 @@ path = "contract/history/玄枢数据契约_v1.0.5_修订单.md"
 status = "superseded"
 sha256 = "e086d94aff71ce669a274c3614dede78396ac7a87d889b8604a78739305d3be3"
 note = "已合入契约正文（B4-14～B4-16），以正文为准"
+
+[[file]]
+path = "contract/history/玄枢数据契约_v1.0.6_修订单.md"
+status = "draft"
+sha256 = "87a3a5e02a24ca4c2d09f1554f5f773fed71a910400f7001c0073d555b81be7e"
+note = "E2-FIX 定点修订：Q-7 证据—主张模型（§2.3、§2.5、R-I-4、§12.2）与 E-B13 更新记录（R-39.13）；已合入正文，修订分支上待独立审查与 ChatGPT 验收"
 
 # ---------------------------------------------------------------- 星历
 [[file]]
@@ -675,7 +681,7 @@ note = "Muse 任务一（Q-7）：evidence_role 四类核查——不互斥、�
 path = "crosscheck/muse/M-6_P-B-07月破定例刊本直读报告.pdf"
 status = "source"
 sha256 = "87b63a18fe51d738553963ef1ad2227f8ea8d545e5836c13633423ca03b3815a"
-note = "Muse 任务二：《卜筮正宗》乾隆五十二年刊本“月破定例”直读——E-B13 重估为已证实/A，P-B-07 T0 不需重审；只查证不裁决（2026-11-21，用户上传）"
+note = "Muse 任务二：《卜筮正宗》乾隆五十二年刊本“月破定例”直读——E-B13 重估为已证实/A，P-B-07 T0 不需重审；只查证不裁决（2026-11-21，用户上传）；报告所称 images/ 图像未交付，见 M-6_存档说明.md"
 
 [[file]]
 path = "crosscheck/muse/M-5_Q-7_evidence_role核查报告_正文.txt"
@@ -687,4 +693,16 @@ note = "Muse M-5 报告 PDF 的正文文本（pdftotext -layout 机器提取，�
 path = "crosscheck/muse/M-6_P-B-07月破定例刊本直读报告_正文.txt"
 status = "source"
 sha256 = "bdbf2e3224c4fc052acf8fda02cbf9edc6fa12b1e2ef20e768b5215ea81363ae"
-note = "Muse M-6 报告 PDF 的正文文本（pdftotext -layout 机器提取，供审查阅读；以 PDF 原件为准）"
+note = "Muse M-6 报告 PDF 的正文文本（pdftotext -layout 机器提取，供审查阅读；以 PDF 原件为准）；报告所称 images/ 图像未交付，见 M-6_存档说明.md"
+
+[[file]]
+path = "review/E2_定点修订任务书.md"
+status = "source"
+sha256 = "919979e1f101381bad3f7070c13170729d26e62968da09fad04808df1c640561"
+note = "用户 2026-11-21 下达：E2 数据库结构准备一次性定点修订任务（A Q-7、B M-6/E-B13、C 治理缺陷、D 矩阵自证、E DB-D-04/05 边界、F M-6 图像存档）；原文存档"
+
+[[file]]
+path = "crosscheck/muse/M-6_存档说明.md"
+status = "source"
+sha256 = "5afbca3cb3eec470c1d8fdf2328a898afbdc0cc37a7affc3d3e276ac703d03fb"
+note = "M-6 存档更正（E2-FIX F）：报告所称 images/ 下 8 个图像未交付、仓库无此目录；以 IA 叶序 n30/n31 链接复现"
