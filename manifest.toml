@@ -568,3 +568,15 @@ path = "review/E2-A1_关闭记录.md"
 status = "formal"
 sha256 = "96170f3508dee56cb76fb95376908efa9efb98f27bfb88ce51fc490f15b951a8"
 note = "E2-A 第 1 项关闭记录：验收与合并、合并后核对、5 处文字勘误、后续顺序与 UI-2 边界、仓库可见性、UI-2 取代 UI-1"
+
+[[file]]
+path = "review/E2_结构与约束审核清单.md"
+status = "draft"
+sha256 = "a4ef95a878db541bb4f21dd4f77ad3bef811eaa6774ae07ee87cf84cce599257"
+note = "E2 数据库结构准备：结构与约束审核清单（待用户与 ChatGPT 审核；审核前不写代码）"
+
+[[file]]
+path = "crosscheck/muse/M-4_六爻日界与月建_查证任务书.md"
+status = "draft"
+sha256 = "aac9e8099582b49c67b57719bbc3ea56b8e69da762dca2d1c1d6f9930d9e465f"
+note = "Muse 查证任务 M-4：六爻起卦日界与月建取法（E2 审核清单第 7 节）"
