@@ -424,3 +424,135 @@ path = "crosscheck/muse/M-3b_Claude核对记录.md"
 status = "formal"
 sha256 = "8d7a39e8e3043cf1295087e0af72e7ae0d3f6c5113fbdd8a87c34376d4ccf02a"
 note = "M-3b Claude 核对记录"
+
+[[file]]
+path = "design/ui-v2/玄枢_UI-2_方案一_东方雅致_待确认.pdf"
+status = "draft"
+sha256 = "65621377c1ad2f221e1a037e884cdfe99bd932f17a1096ef03da8e869bd656fb"
+note = "UI-2 待确认稿（GPT 验收、用户确认后取代 UI-1）"
+
+[[file]]
+path = "design/ui-v2/UI-2_修改对照表.md"
+status = "draft"
+sha256 = "34e57f71db25bbb14d04bd0ed9cf9158f7a9e9102bf085cfc8ca5497e9dced25"
+note = "UI-2 修改对照表与未改事项"
+
+[[file]]
+path = "design/ui-v2/source/About.dc.html"
+status = "draft"
+sha256 = "756db44995156dc52a841aa8871038ecb9f6817fdbf5cdb2075541ba3dbb2ecf"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/BaziInput.dc.html"
+status = "draft"
+sha256 = "88678ea0e9de123515ba46c14ef867ae1cdfe1027c8ba56ca74654ee5f0bb677"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/BaziInputShichen.dc.html"
+status = "draft"
+sha256 = "9bf4145b4288f932d76b81c2e38afb6b0dae07aecce4b8c61c080b747b61c325"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/BaziInputUnknown.dc.html"
+status = "draft"
+sha256 = "87afcc93cc2d943dd357ef6d5b20e7f6033fa2cb5d7e7c7634941a9f0b041936"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/DeleteProfile.dc.html"
+status = "draft"
+sha256 = "b2cc3475dadd3a0d799ae265b674632849f8f4070f7d1471ab03b8baabd20a26"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/GujiSearch.dc.html"
+status = "draft"
+sha256 = "7670adb4302ee6dd589bc06bcc6f53d26a3ffdc2e2667d31e95e3b1df2c98e78"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/GujiText.dc.html"
+status = "draft"
+sha256 = "19e9056a63c29242343ddafe0af676794e0c93f922d73ca686d2b351e357d5a1"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/History.dc.html"
+status = "draft"
+sha256 = "2b74e210db4b73c84c5f852a35d68dce3a947bce55686e8f6601bd76799ee0ab"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/Liuyao.dc.html"
+status = "draft"
+sha256 = "771991a0b174d4e7026a8539e079d0e10d89b5549d889b84020927ba418c4d96"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/LiuyaoSource.dc.html"
+status = "draft"
+sha256 = "0c99e17bed08ec0b6f6487481b8d669faae74256ec26a96722c7f35ff9d23bf4"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/Main.dc.html"
+status = "draft"
+sha256 = "69bd1ee1d8211b0c586a12b6fa540015744cc7f002c4f5a734212c8ca5f24e90"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/ResultAmbiguous.dc.html"
+status = "draft"
+sha256 = "4cfa8d93a3937d3b76d5feccf0f84d317de1b3ceedd7b8d387b19b9cff23cb3e"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/ResultBlocked.dc.html"
+status = "draft"
+sha256 = "c6846743880b31782e108ea464856fd762066710acba5752ffb5137db94f6bc7"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/ResultDegraded.dc.html"
+status = "draft"
+sha256 = "64dd6361637767d45c1beee883f0f7095fbc65250bfd30c74464c9554fa59ce6"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/ResultNormal.dc.html"
+status = "draft"
+sha256 = "02eb992c2d68cfae2c92d30ed0cdff2b11cbbeacfd8b29cc9c7ecd0b134dae81"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/Settings.dc.html"
+status = "draft"
+sha256 = "fdc9e16e4287d79abe09ff552bfcb1829f6d9ac71e978bf796bcb5fd7e7a4a36"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/States.dc.html"
+status = "draft"
+sha256 = "46ec506a9c63037025fc06b926941738d10013d2b62caf29cf3cad61e2a0c186"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/source/canvas.json"
+status = "draft"
+sha256 = "3c6b3c08ac0e254af5e42075acda5f18e927f268e3e5928feaac70e2a19e2438"
+note = "UI-2 设计源文件"
+
+[[file]]
+path = "design/ui-v2/compare_ui1.py"
+status = "formal"
+sha256 = "c70b5ec2f9c02270b6cf0ff56ec45285a21b5fcacf5b4ffbba5f653a80d5fee0"
+note = "UI-2 与 UI-1 设计源文件逐字比对脚本（只读）"
+
+[[file]]
+path = "design/ui-v2/UI-2_与UI-1源文件比对.md"
+status = "formal"
+sha256 = "aa1735970a8248f77e8196e60a727cace5fe9c794500e4e2dc9e5b54d61b38e0"
+note = "比对结果：12 页逐字相同，5 个文件有改动，1 页新增"
