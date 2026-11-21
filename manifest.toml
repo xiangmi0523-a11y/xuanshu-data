@@ -652,3 +652,27 @@ path = "review/E2_实施授权书_原文.txt"
 status = "source"
 sha256 = "4e5aa379736285d95d90a759b41e796dff1ff33d678f17049d728d4741912eae"
 note = "用户授权 E2 编码：合并审核分支、Q-1～Q-19 最终裁决、实施范围与隔离要求、验收交付项"
+
+[[file]]
+path = "crosscheck/jcs1/gen_golden_jcs1.py"
+status = "formal"
+sha256 = "349b51c7880e56f096ab23a0484cbde3476080bfb7d78bfcc357a0eb779c40f9"
+note = "jcs-1 金标向量独立生成器（E2 审核清单 §6.4(6)；D4 第 2 条：不调用引擎代码）；verify.py 的 check_golden_jcs1 每次重新生成并比对"
+
+[[file]]
+path = "crosscheck/jcs1/golden_jcs1.json"
+status = "formal"
+sha256 = "96e8fa780e21ef65fd97276c2e2f48d5a7ac4d2aee4278db2569e14feda38d55"
+note = "jcs-1 金标向量 GV-01～GV-14（期望规范化文本与 sha256；拒绝集）；引擎 vectors/golden_jcs1.json 逐字节复制，正式库 F06.golden_vectors_sha256 登记此哈希"
+
+[[file]]
+path = "crosscheck/muse/M-5_Q-7_evidence_role核查报告.pdf"
+status = "source"
+sha256 = "b3e0ebf88e9c9c1f53b0a20f031bbb9a500e52197cb789bc8eba51194a7ea7f8"
+note = "Muse 任务一（Q-7）：evidence_role 四类核查——不互斥、四类不穷尽、异文记录宜独立为文本关系、八条字段建议；只查证不裁决（2026-11-21，用户上传）"
+
+[[file]]
+path = "crosscheck/muse/M-6_P-B-07月破定例刊本直读报告.pdf"
+status = "source"
+sha256 = "87b63a18fe51d738553963ef1ad2227f8ea8d545e5836c13633423ca03b3815a"
+note = "Muse 任务二：《卜筮正宗》乾隆五十二年刊本“月破定例”直读——E-B13 重估为已证实/A，P-B-07 T0 不需重审；只查证不裁决（2026-11-21，用户上传）"

@@ -601,6 +601,27 @@ def selftest_no_sim_records():
     (ok if hits == ["static/planted.csv:2"] else fail)(sec, f"自测：植入 1 处，检出 {hits}")
 
 
+def check_golden_jcs1(manifest):
+    """jcs-1 金标向量（E2 审核清单 §6.4(6)、DB-H-20）：重新生成并核对与登记哈希、仓库文件逐字节一致"""
+    sec = "jcs-1 金标"
+    entry = next((e for e in manifest["file"] if e["path"] == "crosscheck/jcs1/golden_jcs1.json"), None)
+    if not entry:
+        fail(sec, "manifest 未登记 crosscheck/jcs1/golden_jcs1.json"); return
+    with tempfile.TemporaryDirectory() as d:
+        out = os.path.join(d, "golden.json")
+        r = subprocess.run([sys.executable, p("crosscheck/jcs1/gen_golden_jcs1.py"), out], capture_output=True, text=True)
+        if r.returncode != 0:
+            fail(sec, "金标生成失败：" + (r.stderr or r.stdout).strip()[-300:]); return
+        got = sha256(out)
+    (ok if got == entry["sha256"] else fail)(sec, f"重新生成哈希{'与登记一致' if got == entry['sha256'] else '与登记不一致'}（{got[:12]}…）")
+    (ok if sha256(p("crosscheck/jcs1/golden_jcs1.json")) == got else fail)(sec, "仓库文件与重新生成结果逐字节一致" if sha256(p("crosscheck/jcs1/golden_jcs1.json")) == got else "仓库文件与重新生成结果不一致")
+    with open(p("crosscheck/jcs1/golden_jcs1.json"), encoding="utf-8") as f:
+        g = json.load(f)
+    ids = [v["id"] for v in g["vectors"]]
+    want = [f"GV-{i:02d}" for i in range(1, 15)]
+    (ok if ids == want else fail)(sec, f"向量编号 {ids[0]}～{ids[-1]} 共 {len(ids)} 组" if ids == want else f"向量编号不符：{ids}")
+
+
 def main():
     with open(p("manifest.toml"), "rb") as f:
         manifest = tomllib.load(f)
@@ -632,6 +653,7 @@ def main():
     check_static(manifest)
     check_static_oracle(manifest)
     check_cfg01(consts)
+    check_golden_jcs1(manifest)
     check_no_sim_records()
     selftest_no_sim_records()
 
