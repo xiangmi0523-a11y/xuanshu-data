@@ -561,6 +561,21 @@ def check_cfg01(c):
     (ok if found else fail)(sec, f"constants.toml [cfg01] locked_value = {v}；契约正文含“{phrase}”：{'是' if found else '否'}")
 
 
+def check_blockers(c):
+    """[blockers] required 与契约 §9.5、附录 BLK.1 的表行逐项相等（E2-FIX-2 P1-3）"""
+    sec = "必备阻断登记"
+    req = c.get("blockers", {}).get("required")
+    if not isinstance(req, list) or not req:
+        fail(sec, "constants.toml 缺 [blockers] required"); return
+    text = open(p("contract/玄枢数据契约_v1.0.md"), encoding="utf-8").read()
+    def rows(start, end):
+        i = text.index(start); j = text.index(end, i)
+        return [m.group(1) for m in re.finditer(r"^\| (B\d|BLK-\d) \|", text[i:j], re.M)]
+    found = rows("### 9.5 B1–B4 最小阻断集", "### 9.6") + rows("### BLK.1 七项逐项登记", "### BLK.2")
+    same = sorted(found) == sorted(req) and len(set(req)) == len(req)
+    (ok if same else fail)(sec, f"constants.toml [blockers] required = {req}；契约 §9.5 + BLK.1 表行 = {found}")
+
+
 SIM_SCAN_DIRS = ["static", "jieqi", "eot", "b4-data", "crosscheck/oracle", "crosscheck/jcs1", "formal"]
 SIM_PAT = re.compile(r"TEST-SIM-|TEST-G[0-9]")
 
@@ -653,6 +668,7 @@ def main():
     check_static(manifest)
     check_static_oracle(manifest)
     check_cfg01(consts)
+    check_blockers(consts)
     check_golden_jcs1(manifest)
     check_no_sim_records()
     selftest_no_sim_records()
