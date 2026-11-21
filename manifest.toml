@@ -706,3 +706,9 @@ path = "crosscheck/muse/M-6_存档说明.md"
 status = "source"
 sha256 = "5afbca3cb3eec470c1d8fdf2328a898afbdc0cc37a7affc3d3e276ac703d03fb"
 note = "M-6 存档更正（E2-FIX F）：报告所称 images/ 下 8 个图像未交付、仓库无此目录；以 IA 叶序 n30/n31 链接复现"
+
+[[file]]
+path = "review/E2_FIX2_任务书.md"
+status = "source"
+sha256 = "a9212c44e8b7a3d6dcf8db51fc20ece2e8f06d70337fe221f55c0e79f287f1e5"
+note = "用户 2026-11-21 下达：E2-FIX 第二轮修复任务（P1-1 R-I-4 进判定、P1-2 函数级争议、P1-3 阻断失效关闭、P2-2～P2-5）；原文存档。所引 Claude B 审查报告未随任务交付"
