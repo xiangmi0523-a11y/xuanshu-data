@@ -572,8 +572,8 @@ note = "E2-A 第 1 项关闭记录：验收与合并、合并后核对、5 处�
 [[file]]
 path = "review/E2_结构与约束审核清单.md"
 status = "draft"
-sha256 = "981da582e05a603a9781a18d6c6af0191f89413daa796bf3afdd57a6233c2899"
-note = "E2 数据库结构准备：结构与约束审核清单第 3 版（按 ChatGPT 第二轮意见定点修订；待最终审核，审核前不写代码）"
+sha256 = "4bc040a9cb3751863ea10a333b97d43341235afa7b0379ee21268fd56f27c440"
+note = "E2 数据库结构准备：结构与约束审核清单第 4 版（按 ChatGPT 第 3 版最终审核意见修订 R1～R4；待最终审核，审核前不写代码）"
 
 [[file]]
 path = "crosscheck/muse/M-4_六爻日界与月建_查证任务书.md"
@@ -622,3 +622,15 @@ path = "crosscheck/muse/M-4_Muse补查_白昼换日.pdf"
 status = "source"
 sha256 = "97069de343e2e4dac4c1253159ea3bc6c5bc078954f7aabe34dba9f6bd83170b"
 note = "Muse M-4 补查：四部古籍未见白昼换日之说"
+
+[[file]]
+path = "review/E2_GPT第三轮审核意见_用户转述.txt"
+status = "source"
+sha256 = "ba125171d2385dce8aa34d3b082063d4d96e00114a74bde07bc398b529342ebc"
+note = "ChatGPT 对审核清单第 3 版的最终审核意见 R1～R4（用户转述原文）"
+
+[[file]]
+path = "review/E2_结构与约束审核清单_第三轮修订对照表.md"
+status = "draft"
+sha256 = "5233573857cf3d6fe2a04536fe94b26e7986df55057b62899e405d24b9f9129e"
+note = "E2 审核清单第 3 版至第 4 版逐项修订对照表（R1～R4）"
