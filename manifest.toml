@@ -572,8 +572,8 @@ note = "E2-A 第 1 项关闭记录：验收与合并、合并后核对、5 处�
 [[file]]
 path = "review/E2_结构与约束审核清单.md"
 status = "draft"
-sha256 = "bd55ed570583ff6c789854da715c652e765b670d97556823ac909d46e2756880"
-note = "E2 数据库结构准备：结构与约束审核清单第 4 版定稿（R1～R4 修订 + 交审前自查 Z-1～Z-12；待最终审核，审核前不写代码）"
+sha256 = "0c532370e353e41118e8a59d4ec3830a46dad422343e16128310fd3738b36e08"
+note = "E2 数据库结构准备：结构与约束审核清单第 4 版定稿（R1～R4、交审前自查 Z-1～Z-12、最终审核 R1 token 论证定点修订；待最终确认，审核前不写代码）"
 
 [[file]]
 path = "crosscheck/muse/M-4_六爻日界与月建_查证任务书.md"
@@ -632,5 +632,11 @@ note = "ChatGPT 对审核清单第 3 版的最终审核意见 R1～R4（用户�
 [[file]]
 path = "review/E2_结构与约束审核清单_第三轮修订对照表.md"
 status = "draft"
-sha256 = "3e714207d54bf1e2415872454ea0dab9a94248329c640b5549b1134f956253ff"
-note = "E2 审核清单第 3 版至第 4 版逐项修订对照表（R1～R4；交审前自查 Z-1～Z-12；根因分析）"
+sha256 = "7fa1ade2d0c286d4c2cbfef4e886b676aca6c0be31eb03ddbbf1dcf776d9a32f"
+note = "E2 审核清单第 3 版至第 4 版逐项修订对照表（R1～R4；自查 Z-1～Z-12；根因分析；最终审核后 R1 定点修订）"
+
+[[file]]
+path = "review/E2_GPT第四轮审核意见_原文.txt"
+status = "source"
+sha256 = "cd3856caf3f90573d1a091443650198ddecb0eb8b8ee96e1eb6009fc2d6a64dd"
+note = "ChatGPT 对 E2 审核清单第 4 版定稿 37aa686 的最终审核原文（只余 R1 token 论证须纠正）"
